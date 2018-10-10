@@ -1,0 +1,435 @@
+{
+	"took": 2,
+	"timed_out": false,
+	"_shards": {
+		"total": 2,
+		"successful": 2,
+		"skipped": 0,
+		"failed": 0
+	},
+	"hits": {
+		"total": 9407,
+		"max_score": 1.0,
+		"hits": [{
+			"_index": "good-books-ds",
+			"_type": "good-books-ds",
+			"_id": "5676",
+			"_score": 1.0,
+			"_source": {
+				"authors": "Arthur C. Clarke, Gentry Lee",
+				"average_rating": 3.76,
+				"average_rating_rounded": 4,
+				"books_count": 48,
+				"id": 5676,
+				"image": "https://images.gr-assets.com/books/1375814957l/112518.jpg",
+				"image_medium": "https://images.gr-assets.com/books/1375814957m/112518.jpg",
+				"isbn": "1857230213",
+				"language_code": "eng",
+				"original_publication_year": 1991,
+				"original_series": "Rama",
+				"original_title": "The Garden of Rama (Rama, #3)",
+				"ratings_count": 16389,
+				"title": "The Garden of Rama (Rama, #3)"
+			}
+		}, {
+			"_index": "good-books-ds",
+			"_type": "good-books-ds",
+			"_id": "5681",
+			"_score": 1.0,
+			"_source": {
+				"authors": "Darren Shan",
+				"average_rating": 4.22,
+				"average_rating_rounded": 4,
+				"books_count": 52,
+				"id": 5681,
+				"image": "https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png",
+				"image_medium": "https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png",
+				"isbn": "",
+				"language_code": "",
+				"original_publication_year": 2003,
+				"original_series": "Cirque Du Freak",
+				"original_title": "Killers of the Dawn (Cirque Du Freak, #9)",
+				"ratings_count": 18194,
+				"title": "Killers of the Dawn (Cirque Du Freak, #9)"
+			}
+		}, {
+			"_index": "good-books-ds",
+			"_type": "good-books-ds",
+			"_id": "5683",
+			"_score": 1.0,
+			"_source": {
+				"authors": "Laura Joffe Numeroff, Felicia Bond",
+				"average_rating": 4.16,
+				"average_rating_rounded": 4,
+				"books_count": 13,
+				"id": 5683,
+				"image": "https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png",
+				"image_medium": "https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png",
+				"isbn": "60278684",
+				"language_code": "",
+				"original_publication_year": 2000,
+				"original_series": "",
+				"original_title": "If You Take a Mouse to the Movies",
+				"ratings_count": 17938,
+				"title": "If You Take a Mouse to the Movies"
+			}
+		}, {
+			"_index": "good-books-ds",
+			"_type": "good-books-ds",
+			"_id": "5685",
+			"_score": 1.0,
+			"_source": {
+				"authors": "Orson Scott Card, James Cameron",
+				"average_rating": 4.06,
+				"average_rating_rounded": 4,
+				"books_count": 15,
+				"id": 5685,
+				"image": "https://images.gr-assets.com/books/1225165505l/40289.jpg",
+				"image_medium": "https://images.gr-assets.com/books/1225165505m/40289.jpg",
+				"isbn": "99690608",
+				"language_code": "eng",
+				"original_publication_year": 1989,
+				"original_series": "",
+				"original_title": "The Abyss",
+				"ratings_count": 16318,
+				"title": "The Abyss"
+			}
+		}, {
+			"_index": "good-books-ds",
+			"_type": "good-books-ds",
+			"_id": "5687",
+			"_score": 1.0,
+			"_source": {
+				"authors": "Katarina Bivald, Alice Menzies",
+				"average_rating": 3.56,
+				"average_rating_rounded": 4,
+				"books_count": 63,
+				"id": 5687,
+				"image": "https://images.gr-assets.com/books/1452107441l/25573977.jpg",
+				"image_medium": "https://images.gr-assets.com/books/1452107441m/25573977.jpg",
+				"isbn": "149262344X",
+				"language_code": "eng",
+				"original_publication_year": 2013,
+				"original_series": "",
+				"original_title": "Läsarna i Broken Wheel rekommenderar",
+				"ratings_count": 14571,
+				"title": "The Readers of Broken Wheel Recommend"
+			}
+		}, {
+			"_index": "good-books-ds",
+			"_type": "good-books-ds",
+			"_id": "5693",
+			"_score": 1.0,
+			"_source": {
+				"authors": "Christian Lander",
+				"average_rating": 3.76,
+				"average_rating_rounded": 4,
+				"books_count": 15,
+				"id": 5693,
+				"image": "https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png",
+				"image_medium": "https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png",
+				"isbn": "812979915",
+				"language_code": "en-US",
+				"original_publication_year": 2008,
+				"original_series": "",
+				"original_title": "Stuff White People Like: the Definitive Guide to the Unique Taste of Millions",
+				"ratings_count": 15888,
+				"title": "Stuff White People Like: A Definitive Guide to the Unique Taste of Millions"
+			}
+		}, {
+			"_index": "good-books-ds",
+			"_type": "good-books-ds",
+			"_id": "5694",
+			"_score": 1.0,
+			"_source": {
+				"authors": "Nora Roberts",
+				"average_rating": 4.06,
+				"average_rating_rounded": 4,
+				"books_count": 52,
+				"id": 5694,
+				"image": "https://images.gr-assets.com/books/1458263077l/18754961.jpg",
+				"image_medium": "https://images.gr-assets.com/books/1458263077m/18754961.jpg",
+				"isbn": "425259870",
+				"language_code": "eng",
+				"original_publication_year": 2014,
+				"original_series": "The Cousins O'Dwyer Trilogy",
+				"original_title": "Blood Magick",
+				"ratings_count": 14167,
+				"title": "Blood Magick (The Cousins O'Dwyer Trilogy, #3)"
+			}
+		}, {
+			"_index": "good-books-ds",
+			"_type": "good-books-ds",
+			"_id": "5701",
+			"_score": 1.0,
+			"_source": {
+				"authors": "Willy Lindwer",
+				"average_rating": 4.34,
+				"average_rating_rounded": 4,
+				"books_count": 16,
+				"id": 5701,
+				"image": "https://images.gr-assets.com/books/1320487142l/769212.jpg",
+				"image_medium": "https://images.gr-assets.com/books/1320487142m/769212.jpg",
+				"isbn": "385423608",
+				"language_code": "",
+				"original_publication_year": 1988,
+				"original_series": "",
+				"original_title": "The Last Seven Months of Anne Frank",
+				"ratings_count": 15096,
+				"title": "The Last Seven Months of Anne Frank"
+			}
+		}, {
+			"_index": "good-books-ds",
+			"_type": "good-books-ds",
+			"_id": "5705",
+			"_score": 1.0,
+			"_source": {
+				"authors": "Ken Follett",
+				"average_rating": 3.91,
+				"average_rating_rounded": 4,
+				"books_count": 85,
+				"id": 5705,
+				"image": "https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png",
+				"image_medium": "https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png",
+				"isbn": "451219597",
+				"language_code": "eng",
+				"original_publication_year": 2001,
+				"original_series": "",
+				"original_title": "Jackdaws",
+				"ratings_count": 17489,
+				"title": "Jackdaws"
+			}
+		}, {
+			"_index": "good-books-ds",
+			"_type": "good-books-ds",
+			"_id": "5708",
+			"_score": 1.0,
+			"_source": {
+				"authors": "Ben Mikaelsen",
+				"average_rating": 3.85,
+				"average_rating_rounded": 4,
+				"books_count": 29,
+				"id": 5708,
+				"image": "https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png",
+				"image_medium": "https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png",
+				"isbn": "60734000",
+				"language_code": "eng",
+				"original_publication_year": 1997,
+				"original_series": "Spirit Bear",
+				"original_title": "Touching Spirit Bear",
+				"ratings_count": 17706,
+				"title": "Touching Spirit Bear (Spirit Bear, #1)"
+			}
+		}, {
+			"_index": "good-books-ds",
+			"_type": "good-books-ds",
+			"_id": "5710",
+			"_score": 1.0,
+			"_source": {
+				"authors": "Jeaniene Frost",
+				"average_rating": 4.3,
+				"average_rating_rounded": 4,
+				"books_count": 23,
+				"id": 5710,
+				"image": "https://images.gr-assets.com/books/1352947741l/13125234.jpg",
+				"image_medium": "https://images.gr-assets.com/books/1352947741m/13125234.jpg",
+				"isbn": "62076108",
+				"language_code": "en-GB",
+				"original_publication_year": 2013,
+				"original_series": "Night Prince",
+				"original_title": "Twice Tempted",
+				"ratings_count": 26598,
+				"title": "Twice Tempted (Night Prince, #2)"
+			}
+		}, {
+			"_index": "good-books-ds",
+			"_type": "good-books-ds",
+			"_id": "5712",
+			"_score": 1.0,
+			"_source": {
+				"authors": "Kiera Cass",
+				"average_rating": 4.03,
+				"average_rating_rounded": 4,
+				"books_count": 32,
+				"id": 5712,
+				"image": "https://images.gr-assets.com/books/1380214609l/18172471.jpg",
+				"image_medium": "https://images.gr-assets.com/books/1380214609m/18172471.jpg",
+				"isbn": "62318322",
+				"language_code": "eng",
+				"original_publication_year": 2014,
+				"original_series": "The Selection",
+				"original_title": "The Selection Stories: The Prince & The Guard",
+				"ratings_count": 23695,
+				"title": "The Selection Stories: The Prince & The Guard (The Selection, #0.5, 2.5)"
+			}
+		}, {
+			"_index": "good-books-ds",
+			"_type": "good-books-ds",
+			"_id": "5713",
+			"_score": 1.0,
+			"_source": {
+				"authors": "Gary Vaynerchuk",
+				"average_rating": 3.85,
+				"average_rating_rounded": 4,
+				"books_count": 35,
+				"id": 5713,
+				"image": "https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png",
+				"image_medium": "https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png",
+				"isbn": "61914177",
+				"language_code": "en-US",
+				"original_publication_year": 2009,
+				"original_series": "",
+				"original_title": "Crush It!: Why Now Is the Time to Cash in on Your Passion",
+				"ratings_count": 17271,
+				"title": "Crush It!: Why Now Is the Time to Cash In on Your Passion"
+			}
+		}, {
+			"_index": "good-books-ds",
+			"_type": "good-books-ds",
+			"_id": "5714",
+			"_score": 1.0,
+			"_source": {
+				"authors": "Alastair Reynolds",
+				"average_rating": 4.13,
+				"average_rating_rounded": 4,
+				"books_count": 35,
+				"id": 5714,
+				"image": "https://images.gr-assets.com/books/1309206851l/89190.jpg",
+				"image_medium": "https://images.gr-assets.com/books/1309206851m/89190.jpg",
+				"isbn": "044101173X",
+				"language_code": "eng",
+				"original_publication_year": 2003,
+				"original_series": "",
+				"original_title": "Redemption Ark",
+				"ratings_count": 16484,
+				"title": "Redemption Ark"
+			}
+		}, {
+			"_index": "good-books-ds",
+			"_type": "good-books-ds",
+			"_id": "5715",
+			"_score": 1.0,
+			"_source": {
+				"authors": "Steve Berry",
+				"average_rating": 3.94,
+				"average_rating_rounded": 4,
+				"books_count": 54,
+				"id": 5715,
+				"image": "https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png",
+				"image_medium": "https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png",
+				"isbn": "345485777",
+				"language_code": "en-US",
+				"original_publication_year": 2007,
+				"original_series": "Cotton Malone",
+				"original_title": "The Venetian Betrayal",
+				"ratings_count": 18403,
+				"title": "The Venetian Betrayal (Cotton Malone, #3)"
+			}
+		}, {
+			"_index": "good-books-ds",
+			"_type": "good-books-ds",
+			"_id": "5718",
+			"_score": 1.0,
+			"_source": {
+				"authors": "Walt Disney Company, Ellen Titlebaum",
+				"average_rating": 4.39,
+				"average_rating_rounded": 4,
+				"books_count": 77,
+				"id": 5718,
+				"image": "https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png",
+				"image_medium": "https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png",
+				"isbn": "786834277",
+				"language_code": "",
+				"original_publication_year": 2002,
+				"original_series": "",
+				"original_title": "Beauty and the Beast",
+				"ratings_count": 14811,
+				"title": "Beauty and the Beast"
+			}
+		}, {
+			"_index": "good-books-ds",
+			"_type": "good-books-ds",
+			"_id": "5720",
+			"_score": 1.0,
+			"_source": {
+				"authors": "Kylie Scott",
+				"average_rating": 4.32,
+				"average_rating_rounded": 4,
+				"books_count": 32,
+				"id": 5720,
+				"image": "https://images.gr-assets.com/books/1396467599l/19286623.jpg",
+				"image_medium": "https://images.gr-assets.com/books/1396467599m/19286623.jpg",
+				"isbn": "1250052386",
+				"language_code": "eng",
+				"original_publication_year": 2014,
+				"original_series": "Stage Dive",
+				"original_title": "Lead",
+				"ratings_count": 29239,
+				"title": "Lead (Stage Dive, #3)"
+			}
+		}, {
+			"_index": "good-books-ds",
+			"_type": "good-books-ds",
+			"_id": "5724",
+			"_score": 1.0,
+			"_source": {
+				"authors": "Jennifer Echols",
+				"average_rating": 4.02,
+				"average_rating_rounded": 4,
+				"books_count": 9,
+				"id": 5724,
+				"image": "https://images.gr-assets.com/books/1276962830l/7124475.jpg",
+				"image_medium": "https://images.gr-assets.com/books/1276962830m/7124475.jpg",
+				"isbn": "1442406593",
+				"language_code": "eng",
+				"original_publication_year": 2010,
+				"original_series": "The Boys Next Door",
+				"original_title": "Endless Summer",
+				"ratings_count": 18438,
+				"title": "Endless Summer (The Boys Next Door, #1-2)"
+			}
+		}, {
+			"_index": "good-books-ds",
+			"_type": "good-books-ds",
+			"_id": "5726",
+			"_score": 1.0,
+			"_source": {
+				"authors": "Mary Kubica",
+				"average_rating": 3.57,
+				"average_rating_rounded": 4,
+				"books_count": 37,
+				"id": 5726,
+				"image": "https://images.gr-assets.com/books/1459917062l/27821486.jpg",
+				"image_medium": "https://images.gr-assets.com/books/1459917062m/27821486.jpg",
+				"isbn": "778319059",
+				"language_code": "",
+				"original_publication_year": 2016,
+				"original_series": "",
+				"original_title": "Don't You Cry",
+				"ratings_count": 17399,
+				"title": "Don't You Cry"
+			}
+		}, {
+			"_index": "good-books-ds",
+			"_type": "good-books-ds",
+			"_id": "5727",
+			"_score": 1.0,
+			"_source": {
+				"authors": "Willard F. Harley Jr.",
+				"average_rating": 4.11,
+				"average_rating_rounded": 4,
+				"books_count": 37,
+				"id": 5727,
+				"image": "https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png",
+				"image_medium": "https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png",
+				"isbn": "",
+				"language_code": "eng",
+				"original_publication_year": 1986,
+				"original_series": "",
+				"original_title": "Que Necesita El, Que Necesita Ella ",
+				"ratings_count": 15008,
+				"title": "His Needs, Her Needs: Building an Affair-Proof Marriage"
+			}
+		}]
+	}
+}
