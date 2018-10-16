@@ -1,11 +1,12 @@
+TOC
+============
 
-
-
-# TOC
-
- + ES istallazione
+ + ES istallazione [~10 min]
 	- note generali sul cluster e sugli elementi necessari ad una configurazione di base
- + ES base
+	- approccio "hands on" su [demo online](https://demo.elastic.co/app/kibana):
+		- mostriamo come sono fatti di solito i documenti velocemente, serve solo a dare una idea di cosa guardare dopo con attenzione
+		- mostriamo che tutto può essere visto in SQL velocemente, serve solo ad introdurre il tema del riuso su tool noti o con logiche note
+ + ES base [~30 min]
 	- aggiunta documenti da esempi (ex: books.json)
 	- query semplici di esempio via http
 	- review mapping generato 
@@ -14,6 +15,7 @@
 	 + Cerebro setup
 	 + Cluster Health + Overwiev
 	 + Query via REST
+ + bonus: ES SQL (kibana + XPack)
  + lucene
 	- concetti: Document, Field, Token
 	- concetti: Analyzer, Filter, TokenFilter, CharFilter
@@ -45,12 +47,15 @@
  + * *
 
 ## references: 
+
 + analysis
 https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis.html
 + analyzer
 https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis-custom-analyzer.html
 + SQL
 https://www.elastic.co/guide/en/elasticsearch/reference/current/sql-getting-started.html
+	- https://www.elastic.co/blog/an-introduction-to-elasticsearch-sql-with-practical-examples-part-1
+	- https://www.elastic.co/blog/an-introduction-to-elasticsearch-sql-with-practical-examples-part-2
 + term vectors - Eviterei
 https://www.elastic.co/guide/en/elasticsearch/reference/current/docs-termvectors.html
 + multitermvectors - Eviterei
