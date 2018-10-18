@@ -12,10 +12,9 @@ A cura di Guglielmo Piacentini e Alfredo Serafini
 
 Un motore di ricerca e analisi full-text, open-source.
 
-+++
+---
 
-@title[Title + List Fragments]Come lo uso?
-
+# Come lo uso?
 @snap[south-west list-content-concise span-100]
 @ol
 - Hai un negozio online e vuoi permettere ai tuoi clienti di ricercare nel catalogo, utilizzando dei suggerimenti e il completamento automatico. Il catalogo e i tuoi prodotti verranno salvati in Elastic.
