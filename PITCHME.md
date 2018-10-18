@@ -36,6 +36,11 @@ Ogni server nel cluster è un nodo.
 ES stocca i documenti in indici. 
 Un indice può essere "scomposto" in shard.
 
++++
+
+ES si basa su [Apache Lucene](http://lucene.apache.org/) per l'indicizzazione dei documenti.
+Ogni shard è un indice Lucene.
+
 ---
 
 ### THE END
