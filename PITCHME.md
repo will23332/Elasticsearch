@@ -73,7 +73,7 @@ PUT /customer/_doc/1?pretty
   "name": "John Doe"
 }
 ```
-
+@[1-3](Init Spark cluster data source)
 +++
 
 La risposta:
@@ -83,16 +83,9 @@ La risposta:
   "_type" : "_doc",
   "_id" : "1",
   "_version" : 1,
-  "result" : "created",
-  "_shards" : {
-    "total" : 2,
-    "successful" : 1,
-    "failed" : 0
-  },
-  "_seq_no" : 0,
-  "_primary_term" : 1
+  "result" : "created"
+  [...]
 }
-@[1-3](Init Spark cluster data source)
 ```
 +++
 
