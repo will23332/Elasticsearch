@@ -43,5 +43,10 @@ Ogni shard è un indice Lucene.
 
 ---
 
+# Let's get our hands dirty.
+[DEMO](https://demo.elastic.co/app/kibana#/discover?_g=(refreshInterval:(display:'15%20minutes',pause:!f,section:2,value:900000),time:(from:now-5y,mode:quick,to:now))&_a=(columns:!(_source),index:d3d7af60-4c81-11e8-b3d7-01146121b73d,interval:auto,query:(language:kuery,query:''),sort:!(timestamp,desc)))
+
+---
+
 ### THE END
 
