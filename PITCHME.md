@@ -93,11 +93,8 @@ La risposta:
 ```
 ---
 
-## Cerebro
+## Installazione Cerebro
 [Link](https://github.com/lmenezes/cerebro)
-
-+++
-
 Cerebro è una GUI che permette di interagire con Elasticsearch.
 
 ---
