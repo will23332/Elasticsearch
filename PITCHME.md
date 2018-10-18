@@ -266,9 +266,46 @@ Documenti contenuti:
 
 ---
 ## Index Mapping
+Elastic si fonda sul concetto di indice inverso:
+- Un indice inverso consiste nella lista di tutte le parole non ripetute che appaiono in un documento e, per ognuna di queste, una lista dei documenti nelle quali appaiono.
+- Questo permette una ricerca full-text particolarmente rapida.
+
++++
+
 + Analyzer
-+ Similarity
+ES permette l'uso di diversi [analyzer](https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis-analyzers.html) out of the box, oltre che la possibilità di costruirne di custom.
+
++++
+```
+GET _analyze
+{
+  "analyzer" : "standard",
+  "text" : "this is a test"
+}
+```
+Altri casi di [test](https://www.elastic.co/guide/en/elasticsearch/reference/current/indices-analyze.html)
+
++++
+
+## N.B. 
+C'è una differenza sostianziale nella analisi a livello indice e l'analisi durante la ricerca.
+Term Query VS Full-Text Query
+More [here](https://madewithlove.be/basic-understanding-of-text-search/)
+
++++
+
++ Tokenizer
+I [tokenizer](https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis-tokenizers.html) ricevono uno stream di caratteri e li dividono in token individuali a seconda del tokenizer (di solito singole parole)
+
++++
+
++ Filter
+
 + Synonym
+
+---
+## Use Case #2
+CRAIM:
 
 ---
 
