@@ -190,6 +190,9 @@ GET /bank/_search
             "gte": 20000,
             "lte": 30000 }}}}}}
 ```
+
++++
+
 Aggregazioni:
 ```
 GET /bank/_search
@@ -232,9 +235,10 @@ Regione Veneto:
       }
 ```
 @[2-4](Settaggi del Cluster)
-@[5-8](Dichiarazione Analyzer Custom)
-@[8-13](Settaggi Analyzer)
----
+@[5-7](Dichiarazione Analyzer Custom)
+@[7-12](Settaggi Analyzer)
+
++++
 
 ```
       "filter": {
@@ -244,11 +248,27 @@ Regione Veneto:
         }
       }
 ```
+@[2-4](Definizione del filtro custom dei sinonimi)
+@[5](Path dove risiede il file dei sinonimi)
+
++++
+Documenti contenuti:
+```
+{"index":{}}
+{"nome" : "Cazzano di Tramigna"}
+{"index":{}}
+{"nome" : "Bussolengo"}
+{"index":{}}
+{"nome" : "Ronco all'Adige"}
+{"index":{}}
+{"nome" : "Roncà"}
+```
 
 ---
 ## Index Mapping
 + Analyzer
 + Similarity
++ Synonym
 
 ---
 
