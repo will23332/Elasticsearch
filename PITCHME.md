@@ -144,9 +144,12 @@ Elastic espone delle API molto potenti che permettono di:
 
 ## Hands On pt. II
 Dataset [accounts.json](https://github.com/elastic/elasticsearch/blob/master/docs/src/test/resources/accounts.json?raw=true)
+
 Bulk insert (anche tramite Cerebro):
 ```
-curl -H "Content-Type: application/json" -XPOST "localhost:9200/bank/_doc/_bulk?pretty&refresh" --data-binary "@accounts.json"
+curl -H "Content-Type: application/json" 
+-XPOST "localhost:9200/bank/_doc/_bulk?pretty&refresh" 
+--data-binary "@accounts.json"
 ```
 +++
 ## La ricerca tramite URI
@@ -191,24 +194,27 @@ GET /bank/_search
         "range": {
           "balance": {
             "gte": 20000,
-            "lte": 30000
-          }
-        }
+            "lte": 30000 }}}}}}
+```
+Aggregazioni:
+```
+GET /bank/_search
+{
+  "size": 0,
+  "aggs": {
+    "group_by_state": {
+      "terms": {
+        "field": "state.keyword"
       }
     }
   }
 }
 ```
-
 ---
 
-## Lucene
-
-+Document, Field, Token
-+Analyzer, Filter, TokenFilter, CharFilter
-+Inverted Index, DF/ITF, Vector Space Model
-+Similarity
-+Search Boolean, Fuzzy
+## Index Mapping
++ Analyzer
++ Similarity
 
 ---
 
