@@ -12,29 +12,20 @@ A cura di Guglielmo Piacentini e Alfredo Serafini
 
 Un motore di ricerca e analisi full-text, open-source.
 
-+++?image=template/img/spotlight.png&position=top right&size=20% auto
-@title[Title + List Fragments]
++++
 
 @snap[north-west]
-The Agenda [ Step-by-Step ]
+Come lo uso?
 @snapend
 
 @snap[south-west list-content-concise span-100]
 @ol
-- Lorem ipsum dolor sit amet
-- Consectetur adipiscing elit
-- Sed do eiusmod tempor
-- Ut enim ad minim veniam
-- Duis aute irure dolor in
-- Excepteur sint occaecat
-- Cupidatat non proident
-- Sunt in culpa qui officia
+- Hai un negozio online e vuoi permettere ai tuoi clienti di ricercare nel catalogo, utilizzando dei suggerimenti e il completamento automatico. Il catalogo e i tuoi prodotti verranno salvati in Elastic.
+- Vuoi analizzare file di log e statistiche per estrarne conoscenza. Una volta portati i dati su Elastic puoi aggregare e ricercare per estrarre informazioni di interesse.
+- Hai una lista di indirizzi scritti nei modi più disparati, utilizzi Elastic come un dizionario di controllo per costruire una lista di indirizzi normalizzati.
+- Hai un prodotto commerciale che si basa su analisi full-text/semantiche (i.e. Pupilla). Elastic è la spina dorsale su cui vengono sia salvati i documenti che analizzati.
 @olend
 <br><br>
-@snapend
-
-@snap[south-west template-note text-gray]
-Concise list-item fragments template.
 @snapend
 
 ---
