@@ -1,0 +1,53 @@
+1) Spostare il file di sinonimi nella cartella che viene referenziata nel synonyms_path del punto 2
+	i.e. path_to_elasticsearch_folder/config/analysis/
+
+2) Creazione indice + settings + mapping
+
+PUT index
+{
+  "settings": {
+    "number_of_shards": 3,
+    "number_of_replicas": 2,
+    "analysis": {
+      "analyzer": {
+        "simple_rebuilt": {
+          "tokenizer": "lowercase",
+          "filter": [
+		  "lowercase",
+            "asciifolding",
+            "synonym"
+          ]
+        }
+      },
+      "filter": {
+        "synonym": {
+          "type": "synonym",
+          "synonyms_path": "analysis/synonym.txt"
+        }
+      }
+    }
+  },
+  "mappings": {
+    "_doc": {
+      "properties": {
+        "nome": {
+          "type": "text",
+          "analyzer": "simple_rebuilt"
+        }
+      }
+    }
+  }
+}
+
+2)Bulk Insert Dati
+
+POST index/_doc/_bulk
+{"index":{}}
+{"field": "value"}
+{"index":{}}
+{"field": "value2"}
+{"index":{}}
+{"field": "value3"}
+
+3)Query
+localhost:9200/index/_search?q=QUERY
