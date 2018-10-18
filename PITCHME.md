@@ -273,6 +273,7 @@ Elastic si fonda sul concetto di indice inverso:
 +++
 
 + Analyzer
+
 ES permette l'uso di diversi [analyzer](https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis-analyzers.html) out of the box, oltre che la possibilità di costruirne di custom.
 
 +++
@@ -289,12 +290,15 @@ Altri casi di [test](https://www.elastic.co/guide/en/elasticsearch/reference/cur
 
 ## N.B. 
 C'è una differenza sostianziale nella analisi a livello indice e l'analisi durante la ricerca.
-Term Query VS Full-Text Query
+
+erm Query VS Full-Text Query
+
 More [here](https://madewithlove.be/basic-understanding-of-text-search/)
 
 +++
 
 + Tokenizer
+
 I [tokenizer](https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis-tokenizers.html) ricevono uno stream di caratteri e li dividono in token individuali a seconda del tokenizer (di solito singole parole)
 
 +++
