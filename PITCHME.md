@@ -57,12 +57,14 @@ Ogni shard è un indice Lucene.
 ---
 
 ## Lucene
+
 -Document, Field, Token
 -Analyzer, Filter, TokenFilter, CharFilter
 -Inverted Index, DF/ITF, Vector Space Model
 -Similarity
 -Search Boolean, Fuzzy
 
+---
 
 # THE END
 
