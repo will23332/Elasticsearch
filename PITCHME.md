@@ -91,6 +91,36 @@ La risposta:
   "_primary_term" : 1
 }
 ```
++++
+Ricerchiamo il documento appena inserito
+```
+GET /customer/_doc/1?pretty
+```
+La risposta:
+```
+{
+  "_index" : "customer",
+  "_type" : "_doc",
+  "_id" : "1",
+  "_version" : 1,
+  "found" : true,
+  "_source" : { "name": "John Doe" }
+}
+```
++++
+Eliminiamo l'indice creato
+```
+DELETE /customer?pretty
+```
+Richiamiamo la lista degli indici
+```
+GET /_cat/indices?v
+```
+La risposta sarà vuota
+```
+health status index uuid pri rep docs.count docs.deleted store.size pri.store.size
+```
+
 ---
 
 ## Installazione Cerebro
