@@ -64,6 +64,30 @@ GET /_cat/indices?v
 health status index    uuid                   pri rep docs.count docs.deleted store.size pri.store.size
 yellow open   customer 95SQ4TSUT7mWBT7VNHH67A   5   1          0            0       260b           260b
 ```
+
++++
+```
+PUT /customer/_doc/1?pretty
+{
+  "name": "John Doe"
+}
+```
+```
+{
+  "_index" : "customer",
+  "_type" : "_doc",
+  "_id" : "1",
+  "_version" : 1,
+  "result" : "created",
+  "_shards" : {
+    "total" : 2,
+    "successful" : 1,
+    "failed" : 0
+  },
+  "_seq_no" : 0,
+  "_primary_term" : 1
+}
+```
 ---
 
 ## Cerebro
