@@ -119,10 +119,7 @@ Richiamiamo la lista degli indici
 ```
 GET /_cat/indices?v
 ```
-La risposta sarà vuota
-```
-health status index uuid pri rep docs.count docs.deleted store.size pri.store.size
-```
+La risposta sarà @color[#DC143C](vuota)
 
 ---
 
@@ -132,6 +129,15 @@ health status index uuid pri rep docs.count docs.deleted store.size pri.store.si
 Cerebro è una GUI che permette di interagire con Elasticsearch.
 
 ---
+
+## REST API
+Elastic espone delle API molto potenti che permettono di:
+@ul
+-Controllare lo stato di salute e le statistiche del clusterCheck your cluster, node, and index health, status, and statistics
+-Amministrare il cluster, i nodi, gli indici, i dati e i metadati
+-Performare CRUD (Create, Read, Update, and Delete) e operazioni di ricerca sugli indici
+-Eseguire operazioni avanzate come paging, sorting, filtering, aggregazioni...
+@ulend
 
 ## Lucene
 
