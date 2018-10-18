@@ -215,8 +215,10 @@ Documentazione [Query DSL](https://www.elastic.co/guide/en/elasticsearch/referen
 
 ---
 
-##Use Case
+## Use Case
+
 Regione Veneto:
+
 ```
 {
   "settings": {
@@ -291,7 +293,7 @@ Altri casi di [test](https://www.elastic.co/guide/en/elasticsearch/reference/cur
 ## N.B. 
 C'è una differenza sostianziale nella analisi a livello indice e l'analisi durante la ricerca.
 
-erm Query VS Full-Text Query
+Term Query VS Full-Text Query
 
 More [here](https://madewithlove.be/basic-understanding-of-text-search/)
 
@@ -303,11 +305,12 @@ I [tokenizer](https://www.elastic.co/guide/en/elasticsearch/reference/current/an
 
 +++
 
-+ Filter
++ Token Filter (Synonym)
 
-+ Synonym
+I [token filter](https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis-synonym-tokenfilter.html) accettano e modificano gli stream di token provenienti dai tokenizer. Nello specifico il filtro [synonym](https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis-synonym-tokenfilter.html) permette la trasformazione dei token secondo delle tabelle di sinonimi determinate dall'utente.
 
 ---
+
 ## Use Case #2
 CRAIM:
 
