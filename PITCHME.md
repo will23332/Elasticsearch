@@ -125,6 +125,7 @@ health status index uuid pri rep docs.count docs.deleted store.size pri.store.si
 
 ## Installazione Cerebro
 [Link](https://github.com/lmenezes/cerebro)
+
 Cerebro è una GUI che permette di interagire con Elasticsearch.
 
 ---
