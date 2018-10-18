@@ -73,7 +73,7 @@ PUT /customer/_doc/1?pretty
   "name": "John Doe"
 }
 ```
-@[1-3](Init Spark cluster data source)
+
 +++
 
 La risposta:
@@ -205,12 +205,45 @@ GET /bank/_search
 }
 ```
 +++
+
 Documentazione [Search API](https://www.elastic.co/guide/en/elasticsearch/reference/current/search.html)
+
 Documentazione [Query DSL](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html)
+
 ---
 
 ##Use Case
 Regione Veneto:
+```
+{
+  "settings": {
+    "number_of_shards": 3,
+    "number_of_replicas": 2,
+    "analysis": {
+      "analyzer": {
+        "simple_rebuilt": {
+          "tokenizer": "lowercase",
+          "filter": [
+		  "lowercase",
+            "asciifolding",
+            "synonym"
+          ]
+        }
+      }
+```
+@[2-4](Settaggi del Cluster)
+@[5-8](Dichiarazione Analyzer Custom)
+@[8-13](Settaggi Analyzer)
+---
+
+```
+      "filter": {
+        "synonym": {
+          "type": "synonym",
+          "synonyms_path": "analysis/synonym.txt"
+        }
+      }
+```
 
 ---
 ## Index Mapping
