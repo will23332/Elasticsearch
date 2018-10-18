@@ -49,15 +49,29 @@ Ogni shard è un indice Lucene.
 ---
 
 ## Installazione ES
+[Link](https://www.elastic.co/downloads/elasticsearch)
 
-```json
++++
+
+```
 PUT /customer?pretty
 GET /_cat/indices?v
 ```
 
++++
+
+```
+health status index    uuid                   pri rep docs.count docs.deleted store.size pri.store.size
+yellow open   customer 95SQ4TSUT7mWBT7VNHH67A   5   1          0            0       260b           260b
+```
 ---
 
 ## Cerebro
+[Link](https://github.com/lmenezes/cerebro)
+
++++
+
+Cerebro è una GUI che permette di interagire con Elasticsearch.
 
 ---
 
