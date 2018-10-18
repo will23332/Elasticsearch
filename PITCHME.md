@@ -134,10 +134,10 @@ Cerebro è una GUI che permette di interagire con Elasticsearch.
 Elastic espone delle API molto potenti che permettono di:
 
 @ul
--Controllare lo stato di salute e le statistiche del clusterCheck your cluster, node, and index health, status, and statistics
--Amministrare il cluster, i nodi, gli indici, i dati e i metadati
--Performare CRUD (Create, Read, Update, and Delete) e operazioni di ricerca sugli indici
--Eseguire operazioni avanzate come paging, sorting, filtering, aggregazioni...
+- Controllare lo stato di salute e le statistiche del clusterCheck your cluster, node, and index health, status, and statistics
+- Amministrare il cluster, i nodi, gli indici, i dati e i metadati
+- Performare CRUD (Create, Read, Update, and Delete) e operazioni di ricerca sugli indici
+- Eseguire operazioni avanzate come paging, sorting, filtering, aggregazioni...
 @ulend
 
 ---
