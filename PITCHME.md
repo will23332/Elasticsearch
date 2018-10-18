@@ -8,13 +8,13 @@ A cura di Guglielmo Piacentini e Alfredo Serafini
 
 ---
 
-### Che cos'è Elasticsearch?
+## Che cos'è Elasticsearch?
 
 Un motore di ricerca e analisi full-text, open-source.
 
 ---
 
-# Come lo uso?
+## Come lo uso?
 
 @ul
 - Hai un negozio online e vuoi permettere ai tuoi clienti di ricercare nel catalogo, utilizzando dei suggerimenti e il completamento automatico. Il catalogo e i tuoi prodotti verranno salvati in Elastic.
@@ -28,7 +28,7 @@ Un motore di ricerca e analisi full-text, open-source.
 
 ---
 
-# Com'è fatto?
+## Com'è fatto?
 
 Elasticsearch gira in cluster. 
 Un cluster può essere formato da uno o più server.
@@ -43,10 +43,26 @@ Ogni shard è un indice Lucene.
 
 ---
 
-# Let's get our hands dirty.
+## Let's get our hands dirty.
 [DEMO](https://demo.elastic.co/app/kibana)
 
 ---
 
-### THE END
+## Installazione ES
+
+---
+
+## Cerebro
+
+---
+
+## Lucene
+-Document, Field, Token
+-Analyzer, Filter, TokenFilter, CharFilter
+-Inverted Index, DF/ITF, Vector Space Model
+-Similarity
+-Search Boolean, Fuzzy
+
+
+# THE END
 
