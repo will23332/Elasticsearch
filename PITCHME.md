@@ -210,8 +210,15 @@ GET /bank/_search
   }
 }
 ```
++++
+Documentazione [Search API](https://www.elastic.co/guide/en/elasticsearch/reference/current/search.html)
+Documentazione [Query DSL](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html)
 ---
 
+##Use Case
+Regione Veneto:
+
+---
 ## Index Mapping
 + Analyzer
 + Similarity
