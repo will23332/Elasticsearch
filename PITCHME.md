@@ -14,9 +14,7 @@ Un motore di ricerca e analisi full-text, open-source.
 
 +++
 
-@snap[north-west]
-Come lo uso?
-@snapend
+@title[Title + List Fragments]Come lo uso?
 
 @snap[south-west list-content-concise span-100]
 @ol
