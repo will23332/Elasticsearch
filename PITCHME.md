@@ -1,6 +1,6 @@
 # Elasticsearch Crash Course
 
-![LOGO](https://www.seacom.it/wp-content/uploads/2016/02/elastic-logo-H-full-color-300x103.png)
+![LOGO](https://cdn.freebiesupply.com/logos/large/2x/elasticsearch-logo-png-transparent.png)
 
 +++
 
@@ -8,12 +8,9 @@ A cura di Guglielmo Piacentini e Alfredo Serafini
 
 ---
 
-### Flux Design
+### Che cos'è Elasticsearch?
 
-- Dispatcher: Manages Data Flow
-- Stores: Handle State & Logic
-- Views: Render Data via React
+Un motore di ricerca e analisi full-text, open-source.
 
 ---
 
-![Flux Explained](https://facebook.github.io/flux/img/flux-simple-f8-diagram-explained-1300w.png)
