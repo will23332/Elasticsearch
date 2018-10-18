@@ -28,3 +28,15 @@ Un motore di ricerca e analisi full-text, open-source.
 
 ---
 
+# Com'è fatto?
+
+Elasticsearch gira in cluster. 
+Un cluster può essere formato da uno o più server.
+Ogni server nel cluster è un nodo. 
+ES stocca i documenti in indici. 
+Un indice può essere "scomposto" in shard.
+
+---
+
+### THE END
+
