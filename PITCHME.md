@@ -248,8 +248,8 @@ Regione Veneto:
         }
       }
 ```
-@[2-4](Definizione del filtro custom dei sinonimi)
-@[5](Path dove risiede il file dei sinonimi)
+@[1-3](Definizione del filtro custom dei sinonimi)
+@[4](Path dove risiede il file dei sinonimi)
 
 +++
 Documenti contenuti:
