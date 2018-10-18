@@ -52,7 +52,6 @@ Ogni shard è un indice Lucene.
 [Link](https://www.elastic.co/downloads/elasticsearch)
 
 +++
-@ul
 Creiamo un indice 
 ```
 PUT /customer?pretty
@@ -66,7 +65,6 @@ La risposta:
 health status index    uuid                   pri rep docs.count docs.deleted store.size pri.store.size
 yellow open   customer 95SQ4TSUT7mWBT7VNHH67A   5   1          0            0       260b           260b
 ```
-@ulend
 +++
 Inseriamo un documento semplice
 ```
