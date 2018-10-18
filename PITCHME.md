@@ -50,6 +50,11 @@ Ogni shard è un indice Lucene.
 
 ## Installazione ES
 
+```json
+PUT /customer?pretty
+GET /_cat/indices?v
+```
+
 ---
 
 ## Cerebro
