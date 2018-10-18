@@ -134,11 +134,71 @@ Cerebro è una GUI che permette di interagire con Elasticsearch.
 Elastic espone delle API molto potenti che permettono di:
 
 @ul
-- Controllare lo stato di salute e le statistiche del clusterCheck your cluster, node, and index health, status, and statistics
+- Controllare lo stato di salute e le statistiche del cluster
 - Amministrare il cluster, i nodi, gli indici, i dati e i metadati
 - Performare CRUD (Create, Read, Update, and Delete) e operazioni di ricerca sugli indici
 - Eseguire operazioni avanzate come paging, sorting, filtering, aggregazioni...
 @ulend
+
+---
+
+## Hands On pt. II
+Dataset [accounts.json](https://github.com/elastic/elasticsearch/blob/master/docs/src/test/resources/accounts.json?raw=true)
+Bulk insert (anche tramite Cerebro):
+```
+curl -H "Content-Type: application/json" -XPOST "localhost:9200/bank/_doc/_bulk?pretty&refresh" --data-binary "@accounts.json"
+```
++++
+## La ricerca tramite URI
+```
+GET /bank/_search?q=*&sort=account_number:asc&pretty
+```
++++
+## Query DSL
+La più semplice:
+```
+GET /bank/_search
+{
+  "query": { "match_all": {} }
+}
+```
++++
+Sorting:
+```
+GET /bank/_search
+{
+  "query": { "match_all": {} },
+  "sort": { "balance": { "order": "desc" } }
+}
+```
++++
+Match Query:
+```
+GET /bank/_search
+{
+  "query": { "match": { "address": "mill lane" } }
+}
+```
++++
+Filtri:
+```
+GET /bank/_search
+{
+  "query": {
+    "bool": {
+      "must": { "match_all": {} },
+      "filter": {
+        "range": {
+          "balance": {
+            "gte": 20000,
+            "lte": 30000
+          }
+        }
+      }
+    }
+  }
+}
+```
 
 ---
 
