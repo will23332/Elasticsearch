@@ -1,8 +1,3 @@
-1) Spostare il file di sinonimi nella cartella che viene referenziata nel synonyms_path del punto 2
-	i.e. path_to_elasticsearch_folder/config/analysis/
-
-2) Creazione indice + settings + mapping
-
 PUT index
 {
   "settings": {
@@ -38,16 +33,3 @@ PUT index
     }
   }
 }
-
-2)Bulk Insert Dati
-
-POST index/_doc/_bulk
-{"index":{}}
-{"field": "value"}
-{"index":{}}
-{"field": "value2"}
-{"index":{}}
-{"field": "value3"}
-
-3)Query
-localhost:9200/index/_search?q=QUERY
