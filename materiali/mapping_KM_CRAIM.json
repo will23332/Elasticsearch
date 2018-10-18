@@ -1,0 +1,5304 @@
+{
+	"km_doc_it_idx": {
+		"mappings": {
+			"cmis": {
+				"_all": {
+					"enabled": false
+				},
+				"_source": {
+					"excludes": ["formattedtext"]
+				},
+				"dynamic_templates": [{
+					"suggestion": {
+						"mapping": {
+							"analyzer": "suggestion_analyzer",
+							"type": "completion"
+						},
+						"match": "*_suggest_*"
+					}
+				}, {
+					"entity_field": {
+						"mapping": {
+							"index": "analyzed",
+							"analyzer": "chain_analyzer",
+							"boost": 2.0,
+							"type": "string"
+						},
+						"match": "named_entity_*"
+					}
+				}, {
+					"string_not_analyzed": {
+						"mapping": {
+							"index": "not_analyzed",
+							"type": "string"
+						},
+						"match": "*",
+						"match_mapping_type": "string"
+					}
+				}, {
+					"date_not_analyzed": {
+						"mapping": {
+							"index": "not_analyzed",
+							"type": "string"
+						},
+						"match": "*",
+						"match_mapping_type": "date"
+					}
+				}],
+				"properties": {
+					"CHANNEL_ID": {
+						"type": "long"
+					},
+					"CHANNEL_NAME": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"CHANNEL_TYPE": {
+						"type": "string",
+						"index": "no"
+					},
+					"CONFIDENTIAL_GROUP_NAME": {
+						"type": "string",
+						"analyzer": "whitespace"
+					},
+					"CONFIDENTIAL_LEVEL_NUM": {
+						"type": "integer"
+					},
+					"DialogAct": {
+						"type": "string",
+						"analyzer": "whitespace"
+					},
+					"EXTERNAL_DOCUMENT_ID": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"ONTOLOGY_FILENAME": {
+						"type": "string",
+						"analyzer": "whitespace"
+					},
+					"TITLE": {
+						"type": "string"
+					},
+					"TUPLE": {
+						"type": "string",
+						"analyzer": "crmtuple_analyzer"
+					},
+					"answer": {
+						"type": "semantic",
+						"store": true,
+						"term_vector": "with_positions_offsets",
+						"fields": {
+							"sem": {
+								"type": "semantic",
+								"term_vector": "with_positions_offsets",
+								"ignore_malformed": true
+							}
+						},
+						"ignore_malformed": true,
+						"ignore_tokens": true
+					},
+					"checksum": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"conceptualmap": {
+						"type": "string",
+						"index": "no"
+					},
+					"deleteDate": {
+						"type": "date",
+						"format": "strict_date_optional_time||epoch_millis"
+					},
+					"entitymap": {
+						"type": "string",
+						"index": "no"
+					},
+					"formattedtext": {
+						"type": "binary",
+						"store": true
+					},
+					"insertDate": {
+						"type": "date",
+						"format": "strict_date_optional_time||epoch_millis"
+					},
+					"language": {
+						"type": "string",
+						"index": "not_analyzed",
+						"store": true
+					},
+					"mimetype": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"parentURI": {
+						"type": "string",
+						"analyzer": "chain_analyzer"
+					},
+					"plaintext": {
+						"type": "semantic",
+						"store": true,
+						"term_vector": "with_positions_offsets",
+						"fields": {
+							"sem": {
+								"type": "semantic",
+								"term_vector": "with_positions_offsets",
+								"ignore_malformed": true
+							}
+						},
+						"ignore_malformed": true,
+						"ignore_tokens": true
+					},
+					"propertyUriExactTriple": {
+						"type": "string",
+						"boost": 2.0,
+						"analyzer": "chain_analyzer"
+					},
+					"propertyUrisPermutation": {
+						"type": "string",
+						"analyzer": "chain_analyzer"
+					},
+					"query_suggestion": {
+						"type": "completion",
+						"analyzer": "simple",
+						"payloads": false,
+						"preserve_separators": true,
+						"preserve_position_increments": true,
+						"max_input_length": 50,
+						"context": {
+							"ontology": {
+								"type": "category",
+								"path": "_type",
+								"default": []
+							}
+						}
+					},
+					"resourceURI": {
+						"type": "string",
+						"boost": 2.0,
+						"analyzer": "chain_analyzer"
+					},
+					"resourceURI_answer": {
+						"type": "string",
+						"analyzer": "chain_analyzer"
+					},
+					"size": {
+						"type": "long"
+					},
+					"tuple_answer": {
+						"type": "string",
+						"analyzer": "crmtuple_analyzer"
+					},
+					"tuple_certified": {
+						"type": "string",
+						"analyzer": "crmtuple_analyzer"
+					},
+					"updateDate": {
+						"type": "date",
+						"format": "strict_date_optional_time||epoch_millis"
+					},
+					"uri": {
+						"type": "string",
+						"index": "not_analyzed"
+					}
+				}
+			},
+			"facebook": {
+				"_all": {
+					"enabled": false
+				},
+				"_source": {
+					"excludes": ["formattedtext"]
+				},
+				"dynamic_templates": [{
+					"suggestion": {
+						"mapping": {
+							"analyzer": "suggestion_analyzer",
+							"type": "completion"
+						},
+						"match": "*_suggest_*"
+					}
+				}, {
+					"entity_field": {
+						"mapping": {
+							"index": "analyzed",
+							"analyzer": "chain_analyzer",
+							"boost": 2.0,
+							"type": "string"
+						},
+						"match": "named_entity_*"
+					}
+				}, {
+					"string_not_analyzed": {
+						"mapping": {
+							"index": "not_analyzed",
+							"type": "string"
+						},
+						"match": "*",
+						"match_mapping_type": "string"
+					}
+				}, {
+					"date_not_analyzed": {
+						"mapping": {
+							"index": "not_analyzed",
+							"type": "string"
+						},
+						"match": "*",
+						"match_mapping_type": "date"
+					}
+				}],
+				"properties": {
+					"CHANNEL_ID": {
+						"type": "long"
+					},
+					"CHANNEL_NAME": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"CHANNEL_TYPE": {
+						"type": "string",
+						"index": "no"
+					},
+					"CONFIDENTIAL_GROUP_NAME": {
+						"type": "string",
+						"analyzer": "whitespace"
+					},
+					"CONFIDENTIAL_LEVEL_NUM": {
+						"type": "integer"
+					},
+					"DialogAct": {
+						"type": "string",
+						"analyzer": "whitespace"
+					},
+					"EXTERNAL_DOCUMENT_ID": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"ONTOLOGY_FILENAME": {
+						"type": "string",
+						"analyzer": "whitespace"
+					},
+					"TITLE": {
+						"type": "string"
+					},
+					"TUPLE": {
+						"type": "string",
+						"analyzer": "crmtuple_analyzer"
+					},
+					"answer": {
+						"type": "semantic",
+						"store": true,
+						"term_vector": "with_positions_offsets",
+						"fields": {
+							"sem": {
+								"type": "semantic",
+								"term_vector": "with_positions_offsets",
+								"ignore_malformed": true
+							}
+						},
+						"ignore_malformed": true,
+						"ignore_tokens": true
+					},
+					"checksum": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"conceptualmap": {
+						"type": "string",
+						"index": "no"
+					},
+					"deleteDate": {
+						"type": "date",
+						"format": "strict_date_optional_time||epoch_millis"
+					},
+					"entitymap": {
+						"type": "string",
+						"index": "no"
+					},
+					"formattedtext": {
+						"type": "binary",
+						"store": true
+					},
+					"insertDate": {
+						"type": "date",
+						"format": "strict_date_optional_time||epoch_millis"
+					},
+					"language": {
+						"type": "string",
+						"index": "not_analyzed",
+						"store": true
+					},
+					"mimetype": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"parentURI": {
+						"type": "string",
+						"analyzer": "chain_analyzer"
+					},
+					"plaintext": {
+						"type": "semantic",
+						"store": true,
+						"term_vector": "with_positions_offsets",
+						"fields": {
+							"sem": {
+								"type": "semantic",
+								"term_vector": "with_positions_offsets",
+								"ignore_malformed": true
+							}
+						},
+						"ignore_malformed": true,
+						"ignore_tokens": true
+					},
+					"propertyUriExactTriple": {
+						"type": "string",
+						"boost": 2.0,
+						"analyzer": "chain_analyzer"
+					},
+					"propertyUrisPermutation": {
+						"type": "string",
+						"analyzer": "chain_analyzer"
+					},
+					"query_suggestion": {
+						"type": "completion",
+						"analyzer": "simple",
+						"payloads": false,
+						"preserve_separators": true,
+						"preserve_position_increments": true,
+						"max_input_length": 50,
+						"context": {
+							"ontology": {
+								"type": "category",
+								"path": "_type",
+								"default": []
+							}
+						}
+					},
+					"resourceURI": {
+						"type": "string",
+						"boost": 2.0,
+						"analyzer": "chain_analyzer"
+					},
+					"resourceURI_answer": {
+						"type": "string",
+						"analyzer": "chain_analyzer"
+					},
+					"size": {
+						"type": "long"
+					},
+					"tuple_answer": {
+						"type": "string",
+						"analyzer": "crmtuple_analyzer"
+					},
+					"tuple_certified": {
+						"type": "string",
+						"analyzer": "crmtuple_analyzer"
+					},
+					"updateDate": {
+						"type": "date",
+						"format": "strict_date_optional_time||epoch_millis"
+					},
+					"uri": {
+						"type": "string",
+						"index": "not_analyzed"
+					}
+				}
+			},
+			"google_plus": {
+				"_all": {
+					"enabled": false
+				},
+				"_source": {
+					"excludes": ["formattedtext"]
+				},
+				"dynamic_templates": [{
+					"suggestion": {
+						"mapping": {
+							"analyzer": "suggestion_analyzer",
+							"type": "completion"
+						},
+						"match": "*_suggest_*"
+					}
+				}, {
+					"entity_field": {
+						"mapping": {
+							"index": "analyzed",
+							"analyzer": "chain_analyzer",
+							"boost": 2.0,
+							"type": "string"
+						},
+						"match": "named_entity_*"
+					}
+				}, {
+					"string_not_analyzed": {
+						"mapping": {
+							"index": "not_analyzed",
+							"type": "string"
+						},
+						"match": "*",
+						"match_mapping_type": "string"
+					}
+				}, {
+					"date_not_analyzed": {
+						"mapping": {
+							"index": "not_analyzed",
+							"type": "string"
+						},
+						"match": "*",
+						"match_mapping_type": "date"
+					}
+				}],
+				"properties": {
+					"CHANNEL_ID": {
+						"type": "long"
+					},
+					"CHANNEL_NAME": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"CHANNEL_TYPE": {
+						"type": "string",
+						"index": "no"
+					},
+					"CONFIDENTIAL_GROUP_NAME": {
+						"type": "string",
+						"analyzer": "whitespace"
+					},
+					"CONFIDENTIAL_LEVEL_NUM": {
+						"type": "integer"
+					},
+					"DialogAct": {
+						"type": "string",
+						"analyzer": "whitespace"
+					},
+					"EXTERNAL_DOCUMENT_ID": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"ONTOLOGY_FILENAME": {
+						"type": "string",
+						"analyzer": "whitespace"
+					},
+					"TITLE": {
+						"type": "string"
+					},
+					"TUPLE": {
+						"type": "string",
+						"analyzer": "crmtuple_analyzer"
+					},
+					"answer": {
+						"type": "semantic",
+						"store": true,
+						"term_vector": "with_positions_offsets",
+						"fields": {
+							"sem": {
+								"type": "semantic",
+								"term_vector": "with_positions_offsets",
+								"ignore_malformed": true
+							}
+						},
+						"ignore_malformed": true,
+						"ignore_tokens": true
+					},
+					"checksum": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"conceptualmap": {
+						"type": "string",
+						"index": "no"
+					},
+					"deleteDate": {
+						"type": "date",
+						"format": "strict_date_optional_time||epoch_millis"
+					},
+					"entitymap": {
+						"type": "string",
+						"index": "no"
+					},
+					"formattedtext": {
+						"type": "binary",
+						"store": true
+					},
+					"insertDate": {
+						"type": "date",
+						"format": "strict_date_optional_time||epoch_millis"
+					},
+					"language": {
+						"type": "string",
+						"index": "not_analyzed",
+						"store": true
+					},
+					"mimetype": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"parentURI": {
+						"type": "string",
+						"analyzer": "chain_analyzer"
+					},
+					"plaintext": {
+						"type": "semantic",
+						"store": true,
+						"term_vector": "with_positions_offsets",
+						"fields": {
+							"sem": {
+								"type": "semantic",
+								"term_vector": "with_positions_offsets",
+								"ignore_malformed": true
+							}
+						},
+						"ignore_malformed": true,
+						"ignore_tokens": true
+					},
+					"propertyUriExactTriple": {
+						"type": "string",
+						"boost": 2.0,
+						"analyzer": "chain_analyzer"
+					},
+					"propertyUrisPermutation": {
+						"type": "string",
+						"analyzer": "chain_analyzer"
+					},
+					"query_suggestion": {
+						"type": "completion",
+						"analyzer": "simple",
+						"payloads": false,
+						"preserve_separators": true,
+						"preserve_position_increments": true,
+						"max_input_length": 50,
+						"context": {
+							"ontology": {
+								"type": "category",
+								"path": "_type",
+								"default": []
+							}
+						}
+					},
+					"resourceURI": {
+						"type": "string",
+						"boost": 2.0,
+						"analyzer": "chain_analyzer"
+					},
+					"resourceURI_answer": {
+						"type": "string",
+						"analyzer": "chain_analyzer"
+					},
+					"size": {
+						"type": "long"
+					},
+					"tuple_answer": {
+						"type": "string",
+						"analyzer": "crmtuple_analyzer"
+					},
+					"tuple_certified": {
+						"type": "string",
+						"analyzer": "crmtuple_analyzer"
+					},
+					"updateDate": {
+						"type": "date",
+						"format": "strict_date_optional_time||epoch_millis"
+					},
+					"uri": {
+						"type": "string",
+						"index": "not_analyzed"
+					}
+				}
+			},
+			"yahoo": {
+				"_all": {
+					"enabled": false
+				},
+				"_source": {
+					"excludes": ["formattedtext"]
+				},
+				"dynamic_templates": [{
+					"suggestion": {
+						"mapping": {
+							"analyzer": "suggestion_analyzer",
+							"type": "completion"
+						},
+						"match": "*_suggest_*"
+					}
+				}, {
+					"entity_field": {
+						"mapping": {
+							"index": "analyzed",
+							"analyzer": "chain_analyzer",
+							"boost": 2.0,
+							"type": "string"
+						},
+						"match": "named_entity_*",
+						"match_mapping_type": "string"
+					}
+				}, {
+					"string_not_analyzed": {
+						"mapping": {
+							"index": "not_analyzed",
+							"type": "string"
+						},
+						"match": "*",
+						"match_mapping_type": "string"
+					}
+				}, {
+					"date_not_analyzed": {
+						"mapping": {
+							"index": "not_analyzed",
+							"type": "string"
+						},
+						"match": "*",
+						"match_mapping_type": "date"
+					}
+				}],
+				"properties": {
+					"CHANNEL_ID": {
+						"type": "long"
+					},
+					"CHANNEL_NAME": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"CHANNEL_TYPE": {
+						"type": "string",
+						"index": "no"
+					},
+					"CONFIDENTIAL_GROUP_NAME": {
+						"type": "string",
+						"analyzer": "whitespace"
+					},
+					"CONFIDENTIAL_LEVEL_NUM": {
+						"type": "integer"
+					},
+					"DialogAct": {
+						"type": "string",
+						"analyzer": "whitespace"
+					},
+					"EXTERNAL_DOCUMENT_ID": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"ONTOLOGY_FILENAME": {
+						"type": "string",
+						"analyzer": "whitespace"
+					},
+					"TITLE": {
+						"type": "string"
+					},
+					"TUPLE": {
+						"type": "string",
+						"analyzer": "crmtuple_analyzer"
+					},
+					"answer": {
+						"type": "semantic",
+						"store": true,
+						"term_vector": "with_positions_offsets",
+						"fields": {
+							"sem": {
+								"type": "semantic",
+								"term_vector": "with_positions_offsets",
+								"ignore_malformed": true
+							}
+						},
+						"ignore_malformed": true,
+						"ignore_tokens": true
+					},
+					"checksum": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"conceptualmap": {
+						"type": "string",
+						"index": "no"
+					},
+					"deleteDate": {
+						"type": "date",
+						"format": "strict_date_optional_time||epoch_millis"
+					},
+					"entitymap": {
+						"type": "string",
+						"index": "no"
+					},
+					"formattedtext": {
+						"type": "binary",
+						"store": true
+					},
+					"insertDate": {
+						"type": "date",
+						"format": "strict_date_optional_time||epoch_millis"
+					},
+					"language": {
+						"type": "string",
+						"index": "not_analyzed",
+						"store": true
+					},
+					"mimetype": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"parentURI": {
+						"type": "string",
+						"analyzer": "chain_analyzer"
+					},
+					"plaintext": {
+						"type": "semantic",
+						"store": true,
+						"term_vector": "with_positions_offsets",
+						"fields": {
+							"sem": {
+								"type": "semantic",
+								"term_vector": "with_positions_offsets",
+								"ignore_malformed": true
+							}
+						},
+						"ignore_malformed": true,
+						"ignore_tokens": true
+					},
+					"propertyUriExactTriple": {
+						"type": "string",
+						"boost": 2.0,
+						"analyzer": "chain_analyzer"
+					},
+					"propertyUrisPermutation": {
+						"type": "string",
+						"analyzer": "chain_analyzer"
+					},
+					"query_suggestion": {
+						"type": "completion",
+						"analyzer": "simple",
+						"payloads": false,
+						"preserve_separators": true,
+						"preserve_position_increments": true,
+						"max_input_length": 50,
+						"context": {
+							"ontology": {
+								"type": "category",
+								"path": "_type",
+								"default": []
+							}
+						}
+					},
+					"resourceURI": {
+						"type": "string",
+						"boost": 2.0,
+						"analyzer": "chain_analyzer"
+					},
+					"resourceURI_answer": {
+						"type": "string",
+						"analyzer": "chain_analyzer"
+					},
+					"size": {
+						"type": "long"
+					},
+					"tuple_answer": {
+						"type": "string",
+						"analyzer": "crmtuple_analyzer"
+					},
+					"tuple_certified": {
+						"type": "string",
+						"analyzer": "crmtuple_analyzer"
+					},
+					"updateDate": {
+						"type": "date",
+						"format": "strict_date_optional_time||epoch_millis"
+					},
+					"uri": {
+						"type": "string",
+						"index": "not_analyzed"
+					}
+				}
+			},
+			"filesystem": {
+				"_all": {
+					"enabled": false
+				},
+				"_source": {
+					"excludes": ["formattedtext"]
+				},
+				"dynamic_templates": [{
+					"suggestion": {
+						"mapping": {
+							"analyzer": "suggestion_analyzer",
+							"type": "completion"
+						},
+						"match": "*_suggest_*"
+					}
+				}, {
+					"entity_field": {
+						"mapping": {
+							"index": "analyzed",
+							"analyzer": "chain_analyzer",
+							"boost": 2.0,
+							"type": "string"
+						},
+						"match": "named_entity_*"
+					}
+				}, {
+					"string_not_analyzed": {
+						"mapping": {
+							"index": "not_analyzed",
+							"type": "string"
+						},
+						"match": "*",
+						"match_mapping_type": "string"
+					}
+				}, {
+					"date_not_analyzed": {
+						"mapping": {
+							"index": "not_analyzed",
+							"type": "string"
+						},
+						"match": "*",
+						"match_mapping_type": "date"
+					}
+				}],
+				"properties": {
+					"CHANNEL_ID": {
+						"type": "long"
+					},
+					"CHANNEL_NAME": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"CHANNEL_TYPE": {
+						"type": "string",
+						"index": "no"
+					},
+					"CONFIDENTIAL_GROUP_NAME": {
+						"type": "string",
+						"analyzer": "whitespace"
+					},
+					"CONFIDENTIAL_LEVEL_LABEL": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"CONFIDENTIAL_LEVEL_NUM": {
+						"type": "integer"
+					},
+					"CONTENT-ENCODING": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"CONTENT-TYPE": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"DialogAct": {
+						"type": "string",
+						"analyzer": "whitespace"
+					},
+					"EXTERNAL_DOCUMENT_ID": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"ONTOLOGY_FILENAME": {
+						"type": "string",
+						"analyzer": "whitespace"
+					},
+					"TITLE": {
+						"type": "string"
+					},
+					"TUPLE": {
+						"type": "string",
+						"analyzer": "crmtuple_analyzer"
+					},
+					"X-PARSED-BY": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"answer": {
+						"type": "semantic",
+						"store": true,
+						"term_vector": "with_positions_offsets",
+						"fields": {
+							"sem": {
+								"type": "semantic",
+								"term_vector": "with_positions_offsets",
+								"ignore_malformed": true
+							}
+						},
+						"ignore_malformed": true,
+						"ignore_tokens": true
+					},
+					"checksum": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"conceptualmap": {
+						"type": "string",
+						"index": "no"
+					},
+					"deleteDate": {
+						"type": "date",
+						"format": "strict_date_optional_time||epoch_millis"
+					},
+					"entity_suggest_Address": {
+						"type": "completion",
+						"analyzer": "suggestion_analyzer",
+						"payloads": false,
+						"preserve_separators": true,
+						"preserve_position_increments": true,
+						"max_input_length": 50
+					},
+					"entity_suggest_BadWord": {
+						"type": "completion",
+						"analyzer": "suggestion_analyzer",
+						"payloads": false,
+						"preserve_separators": true,
+						"preserve_position_increments": true,
+						"max_input_length": 50
+					},
+					"entity_suggest_Colori": {
+						"type": "completion",
+						"analyzer": "suggestion_analyzer",
+						"payloads": false,
+						"preserve_separators": true,
+						"preserve_position_increments": true,
+						"max_input_length": 50
+					},
+					"entity_suggest_Comuni": {
+						"type": "completion",
+						"analyzer": "suggestion_analyzer",
+						"payloads": false,
+						"preserve_separators": true,
+						"preserve_position_increments": true,
+						"max_input_length": 50
+					},
+					"entity_suggest_Lingue": {
+						"type": "completion",
+						"analyzer": "suggestion_analyzer",
+						"payloads": false,
+						"preserve_separators": true,
+						"preserve_position_increments": true,
+						"max_input_length": 50
+					},
+					"entity_suggest_Number": {
+						"type": "completion",
+						"analyzer": "suggestion_analyzer",
+						"payloads": false,
+						"preserve_separators": true,
+						"preserve_position_increments": true,
+						"max_input_length": 50
+					},
+					"entity_suggest_Percentage": {
+						"type": "completion",
+						"analyzer": "suggestion_analyzer",
+						"payloads": false,
+						"preserve_separators": true,
+						"preserve_position_increments": true,
+						"max_input_length": 50
+					},
+					"entity_suggest_Province": {
+						"type": "completion",
+						"analyzer": "suggestion_analyzer",
+						"payloads": false,
+						"preserve_separators": true,
+						"preserve_position_increments": true,
+						"max_input_length": 50
+					},
+					"entity_suggest_Regioni": {
+						"type": "completion",
+						"analyzer": "suggestion_analyzer",
+						"payloads": false,
+						"preserve_separators": true,
+						"preserve_position_increments": true,
+						"max_input_length": 50
+					},
+					"entitymap": {
+						"type": "string",
+						"index": "no"
+					},
+					"formattedtext": {
+						"type": "binary",
+						"store": true
+					},
+					"insertDate": {
+						"type": "date",
+						"format": "strict_date_optional_time||epoch_millis"
+					},
+					"language": {
+						"type": "string",
+						"index": "not_analyzed",
+						"store": true
+					},
+					"mimetype": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"named_entity_Address": {
+						"type": "string",
+						"boost": 2.0,
+						"analyzer": "chain_analyzer"
+					},
+					"named_entity_BadWord": {
+						"type": "string",
+						"boost": 2.0,
+						"analyzer": "chain_analyzer"
+					},
+					"named_entity_Colori": {
+						"type": "string",
+						"boost": 2.0,
+						"analyzer": "chain_analyzer"
+					},
+					"named_entity_Comuni": {
+						"type": "string",
+						"boost": 2.0,
+						"analyzer": "chain_analyzer"
+					},
+					"named_entity_Lingue": {
+						"type": "string",
+						"boost": 2.0,
+						"analyzer": "chain_analyzer"
+					},
+					"named_entity_Number": {
+						"type": "string",
+						"boost": 2.0,
+						"analyzer": "chain_analyzer"
+					},
+					"named_entity_Percentage": {
+						"type": "string",
+						"boost": 2.0,
+						"analyzer": "chain_analyzer"
+					},
+					"named_entity_Province": {
+						"type": "string",
+						"boost": 2.0,
+						"analyzer": "chain_analyzer"
+					},
+					"named_entity_Regioni": {
+						"type": "string",
+						"boost": 2.0,
+						"analyzer": "chain_analyzer"
+					},
+					"parentURI": {
+						"type": "string",
+						"analyzer": "chain_analyzer"
+					},
+					"plaintext": {
+						"type": "semantic",
+						"store": true,
+						"term_vector": "with_positions_offsets",
+						"fields": {
+							"sem": {
+								"type": "semantic",
+								"term_vector": "with_positions_offsets",
+								"ignore_malformed": true
+							}
+						},
+						"ignore_malformed": true,
+						"ignore_tokens": true
+					},
+					"propertyUriExactTriple": {
+						"type": "string",
+						"boost": 2.0,
+						"analyzer": "chain_analyzer"
+					},
+					"propertyUrisPermutation": {
+						"type": "string",
+						"analyzer": "chain_analyzer"
+					},
+					"query_suggestion": {
+						"type": "completion",
+						"analyzer": "simple",
+						"payloads": false,
+						"preserve_separators": true,
+						"preserve_position_increments": true,
+						"max_input_length": 50,
+						"context": {
+							"ontology": {
+								"type": "category",
+								"path": "_type",
+								"default": []
+							}
+						}
+					},
+					"resourceURI": {
+						"type": "string",
+						"boost": 2.0,
+						"analyzer": "chain_analyzer"
+					},
+					"resourceURI_answer": {
+						"type": "string",
+						"analyzer": "chain_analyzer"
+					},
+					"size": {
+						"type": "long"
+					},
+					"tuple_answer": {
+						"type": "string",
+						"analyzer": "crmtuple_analyzer"
+					},
+					"tuple_certified": {
+						"type": "string",
+						"analyzer": "crmtuple_analyzer"
+					},
+					"updateDate": {
+						"type": "date",
+						"format": "strict_date_optional_time||epoch_millis"
+					},
+					"uri": {
+						"type": "string",
+						"index": "not_analyzed"
+					}
+				}
+			},
+			"_default_": {
+				"_all": {
+					"enabled": false
+				},
+				"_source": {
+					"excludes": ["formattedtext"]
+				},
+				"properties": {
+					"CHANNEL_ID": {
+						"type": "long"
+					},
+					"CHANNEL_NAME": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"CHANNEL_TYPE": {
+						"type": "string",
+						"index": "no"
+					},
+					"CONFIDENTIAL_GROUP_NAME": {
+						"type": "string",
+						"analyzer": "whitespace"
+					},
+					"CONFIDENTIAL_LEVEL_NUM": {
+						"type": "integer"
+					},
+					"EXTERNAL_DOCUMENT_ID": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"ONTOLOGY_FILENAME": {
+						"type": "string",
+						"analyzer": "whitespace"
+					},
+					"TITLE": {
+						"type": "string"
+					},
+					"checksum": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"conceptualmap": {
+						"type": "string",
+						"index": "no"
+					},
+					"deleteDate": {
+						"type": "date",
+						"format": "strict_date_optional_time||epoch_millis"
+					},
+					"entitymap": {
+						"type": "string",
+						"index": "no"
+					},
+					"formattedtext": {
+						"type": "binary",
+						"store": true
+					},
+					"insertDate": {
+						"type": "date",
+						"format": "strict_date_optional_time||epoch_millis"
+					},
+					"language": {
+						"type": "string",
+						"index": "not_analyzed",
+						"store": true
+					},
+					"mimetype": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"parentURI": {
+						"type": "string",
+						"analyzer": "chain_analyzer"
+					},
+					"plaintext": {
+						"type": "semantic",
+						"store": true,
+						"term_vector": "with_positions_offsets",
+						"fields": {
+							"sem": {
+								"type": "semantic",
+								"term_vector": "with_positions_offsets",
+								"ignore_malformed": true
+							}
+						},
+						"ignore_malformed": true,
+						"ignore_tokens": true
+					},
+					"propertyUriExactTriple": {
+						"type": "string",
+						"boost": 2.0,
+						"analyzer": "chain_analyzer"
+					},
+					"propertyUrisPermutation": {
+						"type": "string",
+						"analyzer": "chain_analyzer"
+					},
+					"resourceURI": {
+						"type": "string",
+						"boost": 2.0,
+						"analyzer": "chain_analyzer"
+					},
+					"size": {
+						"type": "long"
+					},
+					"updateDate": {
+						"type": "date",
+						"format": "strict_date_optional_time||epoch_millis"
+					},
+					"uri": {
+						"type": "string",
+						"index": "not_analyzed"
+					}
+				}
+			},
+			"feed": {
+				"_all": {
+					"enabled": false
+				},
+				"_source": {
+					"excludes": ["formattedtext"]
+				},
+				"dynamic_templates": [{
+					"suggestion": {
+						"mapping": {
+							"analyzer": "suggestion_analyzer",
+							"type": "completion"
+						},
+						"match": "*_suggest_*"
+					}
+				}, {
+					"entity_field": {
+						"mapping": {
+							"index": "analyzed",
+							"analyzer": "chain_analyzer",
+							"boost": 2.0,
+							"type": "string"
+						},
+						"match": "named_entity_*"
+					}
+				}, {
+					"string_not_analyzed": {
+						"mapping": {
+							"index": "not_analyzed",
+							"type": "string"
+						},
+						"match": "*",
+						"match_mapping_type": "string"
+					}
+				}, {
+					"date_not_analyzed": {
+						"mapping": {
+							"index": "not_analyzed",
+							"type": "string"
+						},
+						"match": "*",
+						"match_mapping_type": "date"
+					}
+				}],
+				"properties": {
+					"CHANNEL_ID": {
+						"type": "long"
+					},
+					"CHANNEL_NAME": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"CHANNEL_TYPE": {
+						"type": "string",
+						"index": "no"
+					},
+					"CONFIDENTIAL_GROUP_NAME": {
+						"type": "string",
+						"analyzer": "whitespace"
+					},
+					"CONFIDENTIAL_LEVEL_NUM": {
+						"type": "integer"
+					},
+					"DialogAct": {
+						"type": "string",
+						"analyzer": "whitespace"
+					},
+					"EXTERNAL_DOCUMENT_ID": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"ONTOLOGY_FILENAME": {
+						"type": "string",
+						"analyzer": "whitespace"
+					},
+					"TITLE": {
+						"type": "string"
+					},
+					"TUPLE": {
+						"type": "string",
+						"analyzer": "crmtuple_analyzer"
+					},
+					"answer": {
+						"type": "semantic",
+						"store": true,
+						"term_vector": "with_positions_offsets",
+						"fields": {
+							"sem": {
+								"type": "semantic",
+								"term_vector": "with_positions_offsets",
+								"ignore_malformed": true
+							}
+						},
+						"ignore_malformed": true,
+						"ignore_tokens": true
+					},
+					"checksum": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"conceptualmap": {
+						"type": "string",
+						"index": "no"
+					},
+					"deleteDate": {
+						"type": "date",
+						"format": "strict_date_optional_time||epoch_millis"
+					},
+					"entitymap": {
+						"type": "string",
+						"index": "no"
+					},
+					"formattedtext": {
+						"type": "binary",
+						"store": true
+					},
+					"insertDate": {
+						"type": "date",
+						"format": "strict_date_optional_time||epoch_millis"
+					},
+					"language": {
+						"type": "string",
+						"index": "not_analyzed",
+						"store": true
+					},
+					"mimetype": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"parentURI": {
+						"type": "string",
+						"analyzer": "chain_analyzer"
+					},
+					"plaintext": {
+						"type": "semantic",
+						"store": true,
+						"term_vector": "with_positions_offsets",
+						"fields": {
+							"sem": {
+								"type": "semantic",
+								"term_vector": "with_positions_offsets",
+								"ignore_malformed": true
+							}
+						},
+						"ignore_malformed": true,
+						"ignore_tokens": true
+					},
+					"propertyUriExactTriple": {
+						"type": "string",
+						"boost": 2.0,
+						"analyzer": "chain_analyzer"
+					},
+					"propertyUrisPermutation": {
+						"type": "string",
+						"analyzer": "chain_analyzer"
+					},
+					"query_suggestion": {
+						"type": "completion",
+						"analyzer": "simple",
+						"payloads": false,
+						"preserve_separators": true,
+						"preserve_position_increments": true,
+						"max_input_length": 50,
+						"context": {
+							"ontology": {
+								"type": "category",
+								"path": "_type",
+								"default": []
+							}
+						}
+					},
+					"resourceURI": {
+						"type": "string",
+						"boost": 2.0,
+						"analyzer": "chain_analyzer"
+					},
+					"resourceURI_answer": {
+						"type": "string",
+						"analyzer": "chain_analyzer"
+					},
+					"size": {
+						"type": "long"
+					},
+					"tuple_answer": {
+						"type": "string",
+						"analyzer": "crmtuple_analyzer"
+					},
+					"tuple_certified": {
+						"type": "string",
+						"analyzer": "crmtuple_analyzer"
+					},
+					"updateDate": {
+						"type": "date",
+						"format": "strict_date_optional_time||epoch_millis"
+					},
+					"uri": {
+						"type": "string",
+						"index": "not_analyzed"
+					}
+				}
+			},
+			"preferredurl": {
+				"_all": {
+					"enabled": false
+				},
+				"_source": {
+					"excludes": ["formattedtext"]
+				},
+				"dynamic_templates": [{
+					"suggestion": {
+						"mapping": {
+							"analyzer": "suggestion_analyzer",
+							"type": "completion"
+						},
+						"match": "*_suggest_*"
+					}
+				}, {
+					"entity_field": {
+						"mapping": {
+							"index": "analyzed",
+							"analyzer": "chain_analyzer",
+							"boost": 2.0,
+							"type": "string"
+						},
+						"match": "named_entity_*"
+					}
+				}, {
+					"string_not_analyzed": {
+						"mapping": {
+							"index": "not_analyzed",
+							"type": "string"
+						},
+						"match": "*",
+						"match_mapping_type": "string"
+					}
+				}, {
+					"date_not_analyzed": {
+						"mapping": {
+							"index": "not_analyzed",
+							"type": "string"
+						},
+						"match": "*",
+						"match_mapping_type": "date"
+					}
+				}],
+				"properties": {
+					"CHANNEL_ID": {
+						"type": "long"
+					},
+					"CHANNEL_NAME": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"CHANNEL_TYPE": {
+						"type": "string",
+						"index": "no"
+					},
+					"CONFIDENTIAL_GROUP_NAME": {
+						"type": "string",
+						"analyzer": "whitespace"
+					},
+					"CONFIDENTIAL_LEVEL_NUM": {
+						"type": "integer"
+					},
+					"DialogAct": {
+						"type": "string",
+						"analyzer": "whitespace"
+					},
+					"EXTERNAL_DOCUMENT_ID": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"ONTOLOGY_FILENAME": {
+						"type": "string",
+						"analyzer": "whitespace"
+					},
+					"TITLE": {
+						"type": "string"
+					},
+					"TUPLE": {
+						"type": "string",
+						"analyzer": "crmtuple_analyzer"
+					},
+					"answer": {
+						"type": "semantic",
+						"store": true,
+						"term_vector": "with_positions_offsets",
+						"fields": {
+							"sem": {
+								"type": "semantic",
+								"term_vector": "with_positions_offsets",
+								"ignore_malformed": true
+							}
+						},
+						"ignore_malformed": true,
+						"ignore_tokens": true
+					},
+					"checksum": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"conceptualmap": {
+						"type": "string",
+						"index": "no"
+					},
+					"deleteDate": {
+						"type": "date",
+						"format": "strict_date_optional_time||epoch_millis"
+					},
+					"entitymap": {
+						"type": "string",
+						"index": "no"
+					},
+					"formattedtext": {
+						"type": "binary",
+						"store": true
+					},
+					"insertDate": {
+						"type": "date",
+						"format": "strict_date_optional_time||epoch_millis"
+					},
+					"language": {
+						"type": "string",
+						"index": "not_analyzed",
+						"store": true
+					},
+					"mimetype": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"parentURI": {
+						"type": "string",
+						"analyzer": "chain_analyzer"
+					},
+					"plaintext": {
+						"type": "semantic",
+						"store": true,
+						"term_vector": "with_positions_offsets",
+						"fields": {
+							"sem": {
+								"type": "semantic",
+								"term_vector": "with_positions_offsets",
+								"ignore_malformed": true
+							}
+						},
+						"ignore_malformed": true,
+						"ignore_tokens": true
+					},
+					"propertyUriExactTriple": {
+						"type": "string",
+						"boost": 2.0,
+						"analyzer": "chain_analyzer"
+					},
+					"propertyUrisPermutation": {
+						"type": "string",
+						"analyzer": "chain_analyzer"
+					},
+					"query_suggestion": {
+						"type": "completion",
+						"analyzer": "simple",
+						"payloads": false,
+						"preserve_separators": true,
+						"preserve_position_increments": true,
+						"max_input_length": 50,
+						"context": {
+							"ontology": {
+								"type": "category",
+								"path": "_type",
+								"default": []
+							}
+						}
+					},
+					"resourceURI": {
+						"type": "string",
+						"boost": 2.0,
+						"analyzer": "chain_analyzer"
+					},
+					"resourceURI_answer": {
+						"type": "string",
+						"analyzer": "chain_analyzer"
+					},
+					"size": {
+						"type": "long"
+					},
+					"tuple_answer": {
+						"type": "string",
+						"analyzer": "crmtuple_analyzer"
+					},
+					"tuple_certified": {
+						"type": "string",
+						"analyzer": "crmtuple_analyzer"
+					},
+					"updateDate": {
+						"type": "date",
+						"format": "strict_date_optional_time||epoch_millis"
+					},
+					"uri": {
+						"type": "string",
+						"index": "not_analyzed"
+					}
+				}
+			},
+			"crawler": {
+				"_all": {
+					"enabled": false
+				},
+				"_source": {
+					"excludes": ["formattedtext"]
+				},
+				"dynamic_templates": [{
+					"suggestion": {
+						"mapping": {
+							"analyzer": "suggestion_analyzer",
+							"type": "completion"
+						},
+						"match": "*_suggest_*"
+					}
+				}, {
+					"entity_field": {
+						"mapping": {
+							"index": "analyzed",
+							"analyzer": "chain_analyzer",
+							"boost": 2.0,
+							"type": "string"
+						},
+						"match": "named_entity_*"
+					}
+				}, {
+					"string_not_analyzed": {
+						"mapping": {
+							"index": "not_analyzed",
+							"type": "string"
+						},
+						"match": "*",
+						"match_mapping_type": "string"
+					}
+				}, {
+					"date_not_analyzed": {
+						"mapping": {
+							"index": "not_analyzed",
+							"type": "string"
+						},
+						"match": "*",
+						"match_mapping_type": "date"
+					}
+				}],
+				"properties": {
+					"ACCESS_PERMISSION:ASSEMBLE_DOCUMENT": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"ACCESS_PERMISSION:CAN_MODIFY": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"ACCESS_PERMISSION:CAN_PRINT": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"ACCESS_PERMISSION:CAN_PRINT_DEGRADED": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"ACCESS_PERMISSION:EXTRACT_CONTENT": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"ACCESS_PERMISSION:EXTRACT_FOR_ACCESSIBILITY": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"ACCESS_PERMISSION:FILL_IN_FORM": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"ACCESS_PERMISSION:MODIFY_ANNOTATIONS": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"AL:ANDROID:APP_NAME": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"AL:ANDROID:PACKAGE": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"AL:ANDROID:URL": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"AL:IOS:APP_NAME": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"AL:IOS:APP_STORE_ID": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"AL:IOS:URL": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"AL:WEB:SHOULD_FALLBACK": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"AL:WEB:URL": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"ALTRI SPORT": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"AMBIENTE": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"ANNO": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"APPLE-ITUNES-APP": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"APPLE-MOBILE-WEB-APP-CAPABLE": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"APPLE-MOBILE-WEB-APP-STATUS-BAR-STYLE": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"APPLE-MOBILE-WEB-APP-TITLE": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"APPLICATION-NAME": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"ATALANTA": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"ATTRIBUTION": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"AUTHOR": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"BENEVENTO": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"CACHE-CONTROL": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"CALCIO": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"CALCIOMERCATO": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"CANALE": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"CANONICAL": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"CATEGORIES": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"CHAMPIONS LEAGUE": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"CHANNEL_ID": {
+						"type": "long"
+					},
+					"CHANNEL_NAME": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"CHANNEL_TYPE": {
+						"type": "string",
+						"index": "no"
+					},
+					"CICLISMO": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"CODE_LANGUAGE": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"CONFIDENTIAL_GROUP_NAME": {
+						"type": "string",
+						"analyzer": "whitespace"
+					},
+					"CONFIDENTIAL_LEVEL_LABEL": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"CONFIDENTIAL_LEVEL_NUM": {
+						"type": "integer"
+					},
+					"CONTENT-ENCODING": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"CONTENT-LANGUAGE": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"CONTENT-TYPE": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"CONTENT-TYPE-HINT": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"CONTENUTO": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"COPYRIGHT": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"CREATED": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"CREATEDATE": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"CREATION-DATE": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"CREATOR": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"DATA": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"DATE": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"DC:CREATOR": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"DC:FORMAT": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"DC:TITLE": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"DCTERMS:CREATED": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"DCTERMS:MODIFIED": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"DECIDERS": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"DESCRIPTION": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"DESCRIPTON": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"DOMINIO": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"DOPING": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"DialogAct": {
+						"type": "string",
+						"analyzer": "whitespace"
+					},
+					"EDITORE": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"EXPIRES": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"EXTERNAL_DOCUMENT_ID": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"F1": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"FB:ADMINS": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"FB:APP_ID": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"FB:PAGES": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"FB:PROFILE_ID": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"FIORENTINA": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"FORMAT-DETECTION": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"GEN-DATE": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"GENERATOR": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"GENERE": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"GENOA": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"GOLF": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"GOOGLE-CATEGORIES": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"GOOGLE-DATE": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"GOOGLE-PLAY-APP": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"GOOGLE-SITE-VERIFICATION": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"GOOGLE-TIPOLOGY": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"GP DEL BAHRAIN": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"GP DI ARGENTINA": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"HANDHELDFRIENDLY": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"ITEM-DATE": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"JUVENTUS": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"KEYWORDS": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"LANGUAGE": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"LAST-MODIFIED": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"LAST-SAVE-DATE": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"LASTGEN": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"META:AUTHOR": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"META:CREATION-DATE": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"META:SAVE-DATE": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"MLS": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"MOBILE-WEB-APP-CAPABLE": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"MODIFIED": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"MONTH": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"MOTOGP": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"MSAPPLICATION-CONFIG": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"MSAPPLICATION-NAVBUTTON-COLOR": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"MSAPPLICATION-SQUARE150X150LOGO": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"MSAPPLICATION-SQUARE310X310LOGO": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"MSAPPLICATION-SQUARE70X70LOGO": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"MSAPPLICATION-STARTURL": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"MSAPPLICATION-TASK": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"MSAPPLICATION-TILECOLOR": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"MSAPPLICATION-TILEIMAGE": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"MSAPPLICATION-TOOLTIP": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"MSAPPLICATION-WIDE310X150LOGO": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"MSAPPLICATION-WINDOW": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"NAPOLI": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"NAZIONALE DI CALCIO": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"NBA": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"NEWS_KEYWORDS": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"NOMEPROGRAMMA": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"OG:DESCRIPTION": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"OG:IMAGE": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"OG:IMAGE:HEIGHT": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"OG:IMAGE:WIDTH": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"OG:LOCALE": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"OG:PAGES": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"OG:PAGE_ID": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"OG:RESTRICTIONS:AGE": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"OG:SITE_NAME": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"OG:TITLE": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"OG:TYPE": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"OG:URL": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"OG:VIDEO:HEIGHT": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"OG:VIDEO:SECURE_URL": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"OG:VIDEO:TAG": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"OG:VIDEO:TYPE": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"OG:VIDEO:URL": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"OG:VIDEO:WIDTH": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"ONTOLOGY_FILENAME": {
+						"type": "string",
+						"analyzer": "whitespace"
+					},
+					"OWNER": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"PAGETYPE": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"PARIGI-ROUBAIX": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"PDF:DOCINFO:CREATED": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"PDF:DOCINFO:CREATOR": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"PDF:DOCINFO:CREATOR_TOOL": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"PDF:DOCINFO:MODIFIED": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"PDF:DOCINFO:PRODUCER": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"PDF:ENCRYPTED": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"PDF:PDFVERSION": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"PRAGMA": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"PREMIER": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"PRODUCER": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"PROGRAMMATV": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"RATING": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"REFERRER": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"REFRESH": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"REVISIT-AFTER": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"ROBOTS": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SAMPDORIA": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SEZIONE": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SITE-VER": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SMARTBANNER:AUTHOR": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SMARTBANNER:BUTTON": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SMARTBANNER:BUTTON-URL-GOOGLE": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SMARTBANNER:ENABLED-PLATFORMS": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SMARTBANNER:ICON-GOOGLE": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SMARTBANNER:PRICE": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SMARTBANNER:PRICE-SUFFIX-GOOGLE": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SMARTBANNER:TITLE": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SOTTOGENERE": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SOTTOSEZIONE": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"TAEKWONDO": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"TAGS": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"TEMATICA": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"TENNIS": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"THEME-COLOR": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"THUMBNAIL": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"TIPOLOGIA": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"TITLE": {
+						"type": "string"
+					},
+					"TUPLE": {
+						"type": "string",
+						"analyzer": "crmtuple_analyzer"
+					},
+					"TWITTER-REDIRECT-SRCS": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"TWITTER-REDIRECT-URL": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"TWITTER:APP:ID:GOOGLEPLAY": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"TWITTER:APP:ID:IPAD": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"TWITTER:APP:ID:IPHONE": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"TWITTER:APP:NAME:GOOGLEPLAY": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"TWITTER:APP:NAME:IPAD": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"TWITTER:APP:NAME:IPHONE": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"TWITTER:APP:URL:GOOGLEPLAY": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"TWITTER:APP:URL:IPAD": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"TWITTER:APP:URL:IPHONE": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"TWITTER:CARD": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"TWITTER:CREATOR": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"TWITTER:DESCRIPTION": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"TWITTER:IMAGE": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"TWITTER:IMAGE:SRC": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"TWITTER:PLAYER": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"TWITTER:PLAYER:HEIGHT": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"TWITTER:PLAYER:WIDTH": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"TWITTER:SITE": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"TWITTER:SITE:ID": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"TWITTER:TITLE": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"TWITTER:URL": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"UDINESE": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"VIEWPORT": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"VS_DEFAULTCLIENTSCRIPT": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"VS_TARGETSCHEMA": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"WT:CG2": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"WT:CG3": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"WT:CG4": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"WT:CP2": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"WT:CP5": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"WT:CP6": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"X-PARSED-BY": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"X-UA-COMPATIBLE": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"XMP:CREATORTOOL": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"XMPTPG:NPAGES": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"YEAR": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"answer": {
+						"type": "semantic",
+						"store": true,
+						"term_vector": "with_positions_offsets",
+						"fields": {
+							"sem": {
+								"type": "semantic",
+								"term_vector": "with_positions_offsets",
+								"ignore_malformed": true
+							}
+						},
+						"ignore_malformed": true,
+						"ignore_tokens": true
+					},
+					"checksum": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"conceptualmap": {
+						"type": "string",
+						"index": "no"
+					},
+					"deleteDate": {
+						"type": "date",
+						"format": "strict_date_optional_time||epoch_millis"
+					},
+					"entity_suggest_Address": {
+						"type": "completion",
+						"analyzer": "suggestion_analyzer",
+						"payloads": false,
+						"preserve_separators": true,
+						"preserve_position_increments": true,
+						"max_input_length": 50
+					},
+					"entity_suggest_BadWord": {
+						"type": "completion",
+						"analyzer": "suggestion_analyzer",
+						"payloads": false,
+						"preserve_separators": true,
+						"preserve_position_increments": true,
+						"max_input_length": 50
+					},
+					"entity_suggest_Colori": {
+						"type": "completion",
+						"analyzer": "suggestion_analyzer",
+						"payloads": false,
+						"preserve_separators": true,
+						"preserve_position_increments": true,
+						"max_input_length": 50
+					},
+					"entity_suggest_Comuni": {
+						"type": "completion",
+						"analyzer": "suggestion_analyzer",
+						"payloads": false,
+						"preserve_separators": true,
+						"preserve_position_increments": true,
+						"max_input_length": 50
+					},
+					"entity_suggest_Date": {
+						"type": "completion",
+						"analyzer": "suggestion_analyzer",
+						"payloads": false,
+						"preserve_separators": true,
+						"preserve_position_increments": true,
+						"max_input_length": 50
+					},
+					"entity_suggest_Email": {
+						"type": "completion",
+						"analyzer": "suggestion_analyzer",
+						"payloads": false,
+						"preserve_separators": true,
+						"preserve_position_increments": true,
+						"max_input_length": 50
+					},
+					"entity_suggest_Lingue": {
+						"type": "completion",
+						"analyzer": "suggestion_analyzer",
+						"payloads": false,
+						"preserve_separators": true,
+						"preserve_position_increments": true,
+						"max_input_length": 50
+					},
+					"entity_suggest_Location": {
+						"type": "completion",
+						"analyzer": "suggestion_analyzer",
+						"payloads": false,
+						"preserve_separators": true,
+						"preserve_position_increments": true,
+						"max_input_length": 50
+					},
+					"entity_suggest_Money": {
+						"type": "completion",
+						"analyzer": "suggestion_analyzer",
+						"payloads": false,
+						"preserve_separators": true,
+						"preserve_position_increments": true,
+						"max_input_length": 50
+					},
+					"entity_suggest_Number": {
+						"type": "completion",
+						"analyzer": "suggestion_analyzer",
+						"payloads": false,
+						"preserve_separators": true,
+						"preserve_position_increments": true,
+						"max_input_length": 50
+					},
+					"entity_suggest_Organization": {
+						"type": "completion",
+						"analyzer": "suggestion_analyzer",
+						"payloads": false,
+						"preserve_separators": true,
+						"preserve_position_increments": true,
+						"max_input_length": 50
+					},
+					"entity_suggest_Percentage": {
+						"type": "completion",
+						"analyzer": "suggestion_analyzer",
+						"payloads": false,
+						"preserve_separators": true,
+						"preserve_position_increments": true,
+						"max_input_length": 50
+					},
+					"entity_suggest_Person": {
+						"type": "completion",
+						"analyzer": "suggestion_analyzer",
+						"payloads": false,
+						"preserve_separators": true,
+						"preserve_position_increments": true,
+						"max_input_length": 50
+					},
+					"entity_suggest_Phone": {
+						"type": "completion",
+						"analyzer": "suggestion_analyzer",
+						"payloads": false,
+						"preserve_separators": true,
+						"preserve_position_increments": true,
+						"max_input_length": 50
+					},
+					"entity_suggest_Province": {
+						"type": "completion",
+						"analyzer": "suggestion_analyzer",
+						"payloads": false,
+						"preserve_separators": true,
+						"preserve_position_increments": true,
+						"max_input_length": 50
+					},
+					"entity_suggest_Regioni": {
+						"type": "completion",
+						"analyzer": "suggestion_analyzer",
+						"payloads": false,
+						"preserve_separators": true,
+						"preserve_position_increments": true,
+						"max_input_length": 50
+					},
+					"entity_suggest_URL": {
+						"type": "completion",
+						"analyzer": "suggestion_analyzer",
+						"payloads": false,
+						"preserve_separators": true,
+						"preserve_position_increments": true,
+						"max_input_length": 50
+					},
+					"entitymap": {
+						"type": "string",
+						"index": "no"
+					},
+					"formattedtext": {
+						"type": "binary",
+						"store": true
+					},
+					"insertDate": {
+						"type": "date",
+						"format": "strict_date_optional_time||epoch_millis"
+					},
+					"language": {
+						"type": "string",
+						"index": "not_analyzed",
+						"store": true
+					},
+					"mimetype": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"named_entity_Address": {
+						"type": "string",
+						"boost": 2.0,
+						"analyzer": "chain_analyzer"
+					},
+					"named_entity_BadWord": {
+						"type": "string",
+						"boost": 2.0,
+						"analyzer": "chain_analyzer"
+					},
+					"named_entity_Colori": {
+						"type": "string",
+						"boost": 2.0,
+						"analyzer": "chain_analyzer"
+					},
+					"named_entity_Comuni": {
+						"type": "string",
+						"boost": 2.0,
+						"analyzer": "chain_analyzer"
+					},
+					"named_entity_Date": {
+						"type": "string",
+						"boost": 2.0,
+						"analyzer": "chain_analyzer"
+					},
+					"named_entity_Email": {
+						"type": "string",
+						"boost": 2.0,
+						"analyzer": "chain_analyzer"
+					},
+					"named_entity_Lingue": {
+						"type": "string",
+						"boost": 2.0,
+						"analyzer": "chain_analyzer"
+					},
+					"named_entity_Location": {
+						"type": "string",
+						"boost": 2.0,
+						"analyzer": "chain_analyzer"
+					},
+					"named_entity_Money": {
+						"type": "string",
+						"boost": 2.0,
+						"analyzer": "chain_analyzer"
+					},
+					"named_entity_Number": {
+						"type": "string",
+						"boost": 2.0,
+						"analyzer": "chain_analyzer"
+					},
+					"named_entity_Organization": {
+						"type": "string",
+						"boost": 2.0,
+						"analyzer": "chain_analyzer"
+					},
+					"named_entity_Percentage": {
+						"type": "string",
+						"boost": 2.0,
+						"analyzer": "chain_analyzer"
+					},
+					"named_entity_Person": {
+						"type": "string",
+						"boost": 2.0,
+						"analyzer": "chain_analyzer"
+					},
+					"named_entity_Phone": {
+						"type": "string",
+						"boost": 2.0,
+						"analyzer": "chain_analyzer"
+					},
+					"named_entity_Province": {
+						"type": "string",
+						"boost": 2.0,
+						"analyzer": "chain_analyzer"
+					},
+					"named_entity_Regioni": {
+						"type": "string",
+						"boost": 2.0,
+						"analyzer": "chain_analyzer"
+					},
+					"named_entity_URL": {
+						"type": "string",
+						"boost": 2.0,
+						"analyzer": "chain_analyzer"
+					},
+					"parentURI": {
+						"type": "string",
+						"analyzer": "chain_analyzer"
+					},
+					"plaintext": {
+						"type": "semantic",
+						"store": true,
+						"term_vector": "with_positions_offsets",
+						"fields": {
+							"sem": {
+								"type": "semantic",
+								"term_vector": "with_positions_offsets",
+								"ignore_malformed": true
+							}
+						},
+						"ignore_malformed": true,
+						"ignore_tokens": true
+					},
+					"propertyUriExactTriple": {
+						"type": "string",
+						"boost": 2.0,
+						"analyzer": "chain_analyzer"
+					},
+					"propertyUrisPermutation": {
+						"type": "string",
+						"analyzer": "chain_analyzer"
+					},
+					"query_suggestion": {
+						"type": "completion",
+						"analyzer": "simple",
+						"payloads": false,
+						"preserve_separators": true,
+						"preserve_position_increments": true,
+						"max_input_length": 50,
+						"context": {
+							"ontology": {
+								"type": "category",
+								"path": "_type",
+								"default": []
+							}
+						}
+					},
+					"resourceURI": {
+						"type": "string",
+						"boost": 2.0,
+						"analyzer": "chain_analyzer"
+					},
+					"resourceURI_answer": {
+						"type": "string",
+						"analyzer": "chain_analyzer"
+					},
+					"size": {
+						"type": "long"
+					},
+					"tuple_answer": {
+						"type": "string",
+						"analyzer": "crmtuple_analyzer"
+					},
+					"tuple_certified": {
+						"type": "string",
+						"analyzer": "crmtuple_analyzer"
+					},
+					"updateDate": {
+						"type": "date",
+						"format": "strict_date_optional_time||epoch_millis"
+					},
+					"uri": {
+						"type": "string",
+						"index": "not_analyzed"
+					}
+				}
+			},
+			"liquida": {
+				"_all": {
+					"enabled": false
+				},
+				"_source": {
+					"excludes": ["formattedtext"]
+				},
+				"dynamic_templates": [{
+					"suggestion": {
+						"mapping": {
+							"analyzer": "suggestion_analyzer",
+							"type": "completion"
+						},
+						"match": "*_suggest_*"
+					}
+				}, {
+					"entity_field": {
+						"mapping": {
+							"index": "analyzed",
+							"analyzer": "chain_analyzer",
+							"boost": 2.0,
+							"type": "string"
+						},
+						"match": "named_entity_*"
+					}
+				}, {
+					"string_not_analyzed": {
+						"mapping": {
+							"index": "not_analyzed",
+							"type": "string"
+						},
+						"match": "*",
+						"match_mapping_type": "string"
+					}
+				}, {
+					"date_not_analyzed": {
+						"mapping": {
+							"index": "not_analyzed",
+							"type": "string"
+						},
+						"match": "*",
+						"match_mapping_type": "date"
+					}
+				}],
+				"properties": {
+					"CHANNEL_ID": {
+						"type": "long"
+					},
+					"CHANNEL_NAME": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"CHANNEL_TYPE": {
+						"type": "string",
+						"index": "no"
+					},
+					"CONFIDENTIAL_GROUP_NAME": {
+						"type": "string",
+						"analyzer": "whitespace"
+					},
+					"CONFIDENTIAL_LEVEL_NUM": {
+						"type": "integer"
+					},
+					"DialogAct": {
+						"type": "string",
+						"analyzer": "whitespace"
+					},
+					"EXTERNAL_DOCUMENT_ID": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"ONTOLOGY_FILENAME": {
+						"type": "string",
+						"analyzer": "whitespace"
+					},
+					"TITLE": {
+						"type": "string"
+					},
+					"TUPLE": {
+						"type": "string",
+						"analyzer": "crmtuple_analyzer"
+					},
+					"answer": {
+						"type": "semantic",
+						"store": true,
+						"term_vector": "with_positions_offsets",
+						"fields": {
+							"sem": {
+								"type": "semantic",
+								"term_vector": "with_positions_offsets",
+								"ignore_malformed": true
+							}
+						},
+						"ignore_malformed": true,
+						"ignore_tokens": true
+					},
+					"checksum": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"conceptualmap": {
+						"type": "string",
+						"index": "no"
+					},
+					"deleteDate": {
+						"type": "date",
+						"format": "strict_date_optional_time||epoch_millis"
+					},
+					"entitymap": {
+						"type": "string",
+						"index": "no"
+					},
+					"formattedtext": {
+						"type": "binary",
+						"store": true
+					},
+					"insertDate": {
+						"type": "date",
+						"format": "strict_date_optional_time||epoch_millis"
+					},
+					"language": {
+						"type": "string",
+						"index": "not_analyzed",
+						"store": true
+					},
+					"mimetype": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"parentURI": {
+						"type": "string",
+						"analyzer": "chain_analyzer"
+					},
+					"plaintext": {
+						"type": "semantic",
+						"store": true,
+						"term_vector": "with_positions_offsets",
+						"fields": {
+							"sem": {
+								"type": "semantic",
+								"term_vector": "with_positions_offsets",
+								"ignore_malformed": true
+							}
+						},
+						"ignore_malformed": true,
+						"ignore_tokens": true
+					},
+					"propertyUriExactTriple": {
+						"type": "string",
+						"boost": 2.0,
+						"analyzer": "chain_analyzer"
+					},
+					"propertyUrisPermutation": {
+						"type": "string",
+						"analyzer": "chain_analyzer"
+					},
+					"query_suggestion": {
+						"type": "completion",
+						"analyzer": "simple",
+						"payloads": false,
+						"preserve_separators": true,
+						"preserve_position_increments": true,
+						"max_input_length": 50,
+						"context": {
+							"ontology": {
+								"type": "category",
+								"path": "_type",
+								"default": []
+							}
+						}
+					},
+					"resourceURI": {
+						"type": "string",
+						"boost": 2.0,
+						"analyzer": "chain_analyzer"
+					},
+					"resourceURI_answer": {
+						"type": "string",
+						"analyzer": "chain_analyzer"
+					},
+					"size": {
+						"type": "long"
+					},
+					"tuple_answer": {
+						"type": "string",
+						"analyzer": "crmtuple_analyzer"
+					},
+					"tuple_certified": {
+						"type": "string",
+						"analyzer": "crmtuple_analyzer"
+					},
+					"updateDate": {
+						"type": "date",
+						"format": "strict_date_optional_time||epoch_millis"
+					},
+					"uri": {
+						"type": "string",
+						"index": "not_analyzed"
+					}
+				}
+			},
+			"database": {
+				"_all": {
+					"enabled": false
+				},
+				"_source": {
+					"excludes": ["formattedtext"]
+				},
+				"dynamic_templates": [{
+					"suggestion": {
+						"mapping": {
+							"analyzer": "suggestion_analyzer",
+							"type": "completion"
+						},
+						"match": "*_suggest_*"
+					}
+				}, {
+					"entity_field": {
+						"mapping": {
+							"index": "analyzed",
+							"analyzer": "chain_analyzer",
+							"boost": 2.0,
+							"type": "string"
+						},
+						"match": "named_entity_*"
+					}
+				}, {
+					"string_not_analyzed": {
+						"mapping": {
+							"index": "not_analyzed",
+							"type": "string"
+						},
+						"match": "*",
+						"match_mapping_type": "string"
+					}
+				}, {
+					"date_not_analyzed": {
+						"mapping": {
+							"index": "not_analyzed",
+							"type": "string"
+						},
+						"match": "*",
+						"match_mapping_type": "date"
+					}
+				}],
+				"properties": {
+					"CHANNEL_ID": {
+						"type": "long"
+					},
+					"CHANNEL_NAME": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"CHANNEL_TYPE": {
+						"type": "string",
+						"index": "no"
+					},
+					"CONFIDENTIAL_GROUP_NAME": {
+						"type": "string",
+						"analyzer": "whitespace"
+					},
+					"CONFIDENTIAL_LEVEL_NUM": {
+						"type": "integer"
+					},
+					"DialogAct": {
+						"type": "string",
+						"analyzer": "whitespace"
+					},
+					"EXTERNAL_DOCUMENT_ID": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"ONTOLOGY_FILENAME": {
+						"type": "string",
+						"analyzer": "whitespace"
+					},
+					"TITLE": {
+						"type": "string"
+					},
+					"TUPLE": {
+						"type": "string",
+						"analyzer": "crmtuple_analyzer"
+					},
+					"answer": {
+						"type": "semantic",
+						"store": true,
+						"term_vector": "with_positions_offsets",
+						"fields": {
+							"sem": {
+								"type": "semantic",
+								"term_vector": "with_positions_offsets",
+								"ignore_malformed": true
+							}
+						},
+						"ignore_malformed": true,
+						"ignore_tokens": true
+					},
+					"checksum": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"conceptualmap": {
+						"type": "string",
+						"index": "no"
+					},
+					"deleteDate": {
+						"type": "date",
+						"format": "strict_date_optional_time||epoch_millis"
+					},
+					"entitymap": {
+						"type": "string",
+						"index": "no"
+					},
+					"formattedtext": {
+						"type": "binary",
+						"store": true
+					},
+					"insertDate": {
+						"type": "date",
+						"format": "strict_date_optional_time||epoch_millis"
+					},
+					"language": {
+						"type": "string",
+						"index": "not_analyzed",
+						"store": true
+					},
+					"mimetype": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"parentURI": {
+						"type": "string",
+						"analyzer": "chain_analyzer"
+					},
+					"plaintext": {
+						"type": "semantic",
+						"store": true,
+						"term_vector": "with_positions_offsets",
+						"fields": {
+							"sem": {
+								"type": "semantic",
+								"term_vector": "with_positions_offsets",
+								"ignore_malformed": true
+							}
+						},
+						"ignore_malformed": true,
+						"ignore_tokens": true
+					},
+					"propertyUriExactTriple": {
+						"type": "string",
+						"boost": 2.0,
+						"analyzer": "chain_analyzer"
+					},
+					"propertyUrisPermutation": {
+						"type": "string",
+						"analyzer": "chain_analyzer"
+					},
+					"query_suggestion": {
+						"type": "completion",
+						"analyzer": "simple",
+						"payloads": false,
+						"preserve_separators": true,
+						"preserve_position_increments": true,
+						"max_input_length": 50,
+						"context": {
+							"ontology": {
+								"type": "category",
+								"path": "_type",
+								"default": []
+							}
+						}
+					},
+					"resourceURI": {
+						"type": "string",
+						"boost": 2.0,
+						"analyzer": "chain_analyzer"
+					},
+					"resourceURI_answer": {
+						"type": "string",
+						"analyzer": "chain_analyzer"
+					},
+					"size": {
+						"type": "long"
+					},
+					"tuple_answer": {
+						"type": "string",
+						"analyzer": "crmtuple_analyzer"
+					},
+					"tuple_certified": {
+						"type": "string",
+						"analyzer": "crmtuple_analyzer"
+					},
+					"updateDate": {
+						"type": "date",
+						"format": "strict_date_optional_time||epoch_millis"
+					},
+					"uri": {
+						"type": "string",
+						"index": "not_analyzed"
+					}
+				}
+			},
+			"twitter": {
+				"_all": {
+					"enabled": false
+				},
+				"_source": {
+					"excludes": ["formattedtext"]
+				},
+				"dynamic_templates": [{
+					"suggestion": {
+						"mapping": {
+							"analyzer": "suggestion_analyzer",
+							"type": "completion"
+						},
+						"match": "*_suggest_*"
+					}
+				}, {
+					"entity_field": {
+						"mapping": {
+							"index": "analyzed",
+							"analyzer": "chain_analyzer",
+							"boost": 2.0,
+							"type": "string"
+						},
+						"match": "named_entity_*"
+					}
+				}, {
+					"string_not_analyzed": {
+						"mapping": {
+							"index": "not_analyzed",
+							"type": "string"
+						},
+						"match": "*",
+						"match_mapping_type": "string"
+					}
+				}, {
+					"date_not_analyzed": {
+						"mapping": {
+							"index": "not_analyzed",
+							"type": "string"
+						},
+						"match": "*",
+						"match_mapping_type": "date"
+					}
+				}],
+				"properties": {
+					"CHANNEL_ID": {
+						"type": "long"
+					},
+					"CHANNEL_NAME": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"CHANNEL_TYPE": {
+						"type": "string",
+						"index": "no"
+					},
+					"CONFIDENTIAL_GROUP_NAME": {
+						"type": "string",
+						"analyzer": "whitespace"
+					},
+					"CONFIDENTIAL_LEVEL_NUM": {
+						"type": "integer"
+					},
+					"DialogAct": {
+						"type": "string",
+						"analyzer": "whitespace"
+					},
+					"EXTERNAL_DOCUMENT_ID": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"ONTOLOGY_FILENAME": {
+						"type": "string",
+						"analyzer": "whitespace"
+					},
+					"TITLE": {
+						"type": "string"
+					},
+					"TUPLE": {
+						"type": "string",
+						"analyzer": "crmtuple_analyzer"
+					},
+					"answer": {
+						"type": "semantic",
+						"store": true,
+						"term_vector": "with_positions_offsets",
+						"fields": {
+							"sem": {
+								"type": "semantic",
+								"term_vector": "with_positions_offsets",
+								"ignore_malformed": true
+							}
+						},
+						"ignore_malformed": true,
+						"ignore_tokens": true
+					},
+					"checksum": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"conceptualmap": {
+						"type": "string",
+						"index": "no"
+					},
+					"deleteDate": {
+						"type": "date",
+						"format": "strict_date_optional_time||epoch_millis"
+					},
+					"entitymap": {
+						"type": "string",
+						"index": "no"
+					},
+					"formattedtext": {
+						"type": "binary",
+						"store": true
+					},
+					"insertDate": {
+						"type": "date",
+						"format": "strict_date_optional_time||epoch_millis"
+					},
+					"language": {
+						"type": "string",
+						"index": "not_analyzed",
+						"store": true
+					},
+					"mimetype": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"parentURI": {
+						"type": "string",
+						"analyzer": "chain_analyzer"
+					},
+					"plaintext": {
+						"type": "semantic",
+						"store": true,
+						"term_vector": "with_positions_offsets",
+						"fields": {
+							"sem": {
+								"type": "semantic",
+								"term_vector": "with_positions_offsets",
+								"ignore_malformed": true
+							}
+						},
+						"ignore_malformed": true,
+						"ignore_tokens": true
+					},
+					"propertyUriExactTriple": {
+						"type": "string",
+						"boost": 2.0,
+						"analyzer": "chain_analyzer"
+					},
+					"propertyUrisPermutation": {
+						"type": "string",
+						"analyzer": "chain_analyzer"
+					},
+					"query_suggestion": {
+						"type": "completion",
+						"analyzer": "simple",
+						"payloads": false,
+						"preserve_separators": true,
+						"preserve_position_increments": true,
+						"max_input_length": 50,
+						"context": {
+							"ontology": {
+								"type": "category",
+								"path": "_type",
+								"default": []
+							}
+						}
+					},
+					"resourceURI": {
+						"type": "string",
+						"boost": 2.0,
+						"analyzer": "chain_analyzer"
+					},
+					"resourceURI_answer": {
+						"type": "string",
+						"analyzer": "chain_analyzer"
+					},
+					"size": {
+						"type": "long"
+					},
+					"tuple_answer": {
+						"type": "string",
+						"analyzer": "crmtuple_analyzer"
+					},
+					"tuple_certified": {
+						"type": "string",
+						"analyzer": "crmtuple_analyzer"
+					},
+					"updateDate": {
+						"type": "date",
+						"format": "strict_date_optional_time||epoch_millis"
+					},
+					"uri": {
+						"type": "string",
+						"index": "not_analyzed"
+					}
+				}
+			},
+			"push": {
+				"_all": {
+					"enabled": false
+				},
+				"_source": {
+					"excludes": ["formattedtext"]
+				},
+				"dynamic_templates": [{
+					"suggestion": {
+						"mapping": {
+							"analyzer": "suggestion_analyzer",
+							"type": "completion"
+						},
+						"match": "*_suggest_*"
+					}
+				}, {
+					"entity_field": {
+						"mapping": {
+							"index": "analyzed",
+							"analyzer": "chain_analyzer",
+							"boost": 2.0,
+							"type": "string"
+						},
+						"match": "named_entity_*"
+					}
+				}, {
+					"crmtuple_analyzed": {
+						"mapping": {
+							"index": "analyzed",
+							"analyzer": "crmtuple_analyzer",
+							"type": "string"
+						},
+						"match": "TUPLE*"
+					}
+				}, {
+					"string_not_analyzed": {
+						"mapping": {
+							"index": "not_analyzed",
+							"type": "string"
+						},
+						"match": "*",
+						"match_mapping_type": "string"
+					}
+				}, {
+					"date_not_analyzed": {
+						"mapping": {
+							"index": "not_analyzed",
+							"type": "string"
+						},
+						"match": "*",
+						"match_mapping_type": "date"
+					}
+				}],
+				"properties": {
+					"ACCESS_PERMISSION:ASSEMBLE_DOCUMENT": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"ACCESS_PERMISSION:CAN_MODIFY": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"ACCESS_PERMISSION:CAN_PRINT": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"ACCESS_PERMISSION:CAN_PRINT_DEGRADED": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"ACCESS_PERMISSION:EXTRACT_CONTENT": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"ACCESS_PERMISSION:EXTRACT_FOR_ACCESSIBILITY": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"ACCESS_PERMISSION:FILL_IN_FORM": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"ACCESS_PERMISSION:MODIFY_ANNOTATIONS": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"ANOTHER_FILE": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"APPLICATION-NAME": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"APPLICATION-VERSION": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"AUTHOR": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"CHANNEL_ID": {
+						"type": "long"
+					},
+					"CHANNEL_NAME": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"CHANNEL_TYPE": {
+						"type": "string",
+						"index": "no"
+					},
+					"CHARACTER COUNT": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"CHARACTER-COUNT-WITH-SPACES": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"CLASSIFICATION_LOGIC_NAME_": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"CONFIDENTIAL_GROUP_NAME": {
+						"type": "string",
+						"analyzer": "whitespace"
+					},
+					"CONFIDENTIAL_LEVEL_LABEL": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"CONFIDENTIAL_LEVEL_NUM": {
+						"type": "integer"
+					},
+					"CONTACT_ID": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"CONTENT-ENCODING": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"CONTENT-TYPE": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"CP:REVISION": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"CREATED": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"CREATION-DATE": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"CREATOR": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"DATE": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"DC:CREATOR": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"DC:FORMAT": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"DC:TITLE": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"DCTERMS:CREATED": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"DCTERMS:MODIFIED": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"DialogAct": {
+						"type": "string",
+						"analyzer": "whitespace"
+					},
+					"EXTENDED-PROPERTIES:APPLICATION": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"EXTENDED-PROPERTIES:APPVERSION": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"EXTENDED-PROPERTIES:TEMPLATE": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"EXTENDED-PROPERTIES:TOTALTIME": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"EXTERNAL_CREATE_DATE": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"EXTERNAL_DOCUMENT_ID": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"EXTERNAL_UPDATE_DATE": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"LAST-AUTHOR": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"LAST-MODIFIED": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"LAST-SAVE-DATE": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"LINE-COUNT": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"META:AUTHOR": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"META:CHARACTER-COUNT": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"META:CHARACTER-COUNT-WITH-SPACES": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"META:CREATION-DATE": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"META:LAST-AUTHOR": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"META:LINE-COUNT": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"META:PAGE-COUNT": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"META:PARAGRAPH-COUNT": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"META:SAVE-DATE": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"META:WORD-COUNT": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"MODIFIED": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"ONTOLOGY_FILENAME": {
+						"type": "string",
+						"analyzer": "whitespace"
+					},
+					"PAGE-COUNT": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"PARAGRAPH-COUNT": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"PDF:DOCINFO:CREATED": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"PDF:DOCINFO:MODIFIED": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"PDF:DOCINFO:PRODUCER": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"PDF:ENCRYPTED": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"PDF:PDFEXTENSIONVERSION": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"PDF:PDFVERSION": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"PRODUCER": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"REVISION-NUMBER": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SESSION_DURATION": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SEX_OF_SPEAKER_spk1": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SEX_OF_SPEAKER_spk10": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SEX_OF_SPEAKER_spk11": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SEX_OF_SPEAKER_spk12": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SEX_OF_SPEAKER_spk13": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SEX_OF_SPEAKER_spk14": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SEX_OF_SPEAKER_spk15": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SEX_OF_SPEAKER_spk16": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SEX_OF_SPEAKER_spk17": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SEX_OF_SPEAKER_spk18": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SEX_OF_SPEAKER_spk19": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SEX_OF_SPEAKER_spk2": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SEX_OF_SPEAKER_spk20": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SEX_OF_SPEAKER_spk21": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SEX_OF_SPEAKER_spk22": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SEX_OF_SPEAKER_spk23": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SEX_OF_SPEAKER_spk24": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SEX_OF_SPEAKER_spk25": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SEX_OF_SPEAKER_spk26": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SEX_OF_SPEAKER_spk27": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SEX_OF_SPEAKER_spk3": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SEX_OF_SPEAKER_spk4": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SEX_OF_SPEAKER_spk5": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SEX_OF_SPEAKER_spk6": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SEX_OF_SPEAKER_spk7": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SEX_OF_SPEAKER_spk8": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SEX_OF_SPEAKER_spk9": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SEX_OF_SPEAKER_voce femminile [Studio] 0": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SEX_OF_SPEAKER_voce femminile [Studio] 1": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SEX_OF_SPEAKER_voce femminile [Studio] 2": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SEX_OF_SPEAKER_voce femminile [Studio] 3": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SEX_OF_SPEAKER_voce femminile [Studio] 4": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SEX_OF_SPEAKER_voce femminile [Telefono] 0": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SEX_OF_SPEAKER_voce maschile [Studio] 0": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SEX_OF_SPEAKER_voce maschile [Studio] 1": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SEX_OF_SPEAKER_voce maschile [Studio] 2": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SEX_OF_SPEAKER_voce maschile [Studio] 3": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SEX_OF_SPEAKER_voce maschile [Studio] 4": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SEX_OF_SPEAKER_voce maschile [Telefono] 0": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SILENT_DURATION": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SILENT_RATE_SECTION": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SILENT_RATE_SPEAKER_spk1": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SILENT_RATE_SPEAKER_spk10": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SILENT_RATE_SPEAKER_spk11": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SILENT_RATE_SPEAKER_spk12": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SILENT_RATE_SPEAKER_spk13": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SILENT_RATE_SPEAKER_spk14": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SILENT_RATE_SPEAKER_spk15": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SILENT_RATE_SPEAKER_spk16": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SILENT_RATE_SPEAKER_spk17": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SILENT_RATE_SPEAKER_spk18": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SILENT_RATE_SPEAKER_spk19": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SILENT_RATE_SPEAKER_spk2": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SILENT_RATE_SPEAKER_spk20": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SILENT_RATE_SPEAKER_spk21": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SILENT_RATE_SPEAKER_spk22": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SILENT_RATE_SPEAKER_spk23": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SILENT_RATE_SPEAKER_spk24": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SILENT_RATE_SPEAKER_spk25": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SILENT_RATE_SPEAKER_spk26": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SILENT_RATE_SPEAKER_spk27": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SILENT_RATE_SPEAKER_spk3": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SILENT_RATE_SPEAKER_spk4": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SILENT_RATE_SPEAKER_spk5": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SILENT_RATE_SPEAKER_spk6": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SILENT_RATE_SPEAKER_spk7": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SILENT_RATE_SPEAKER_spk8": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SILENT_RATE_SPEAKER_spk9": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SILENT_RATE_SPEAKER_voce femminile [Studio] 0": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SILENT_RATE_SPEAKER_voce femminile [Studio] 1": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SILENT_RATE_SPEAKER_voce femminile [Studio] 2": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SILENT_RATE_SPEAKER_voce femminile [Studio] 3": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SILENT_RATE_SPEAKER_voce femminile [Studio] 4": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SILENT_RATE_SPEAKER_voce maschile [Studio] 0": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SILENT_RATE_SPEAKER_voce maschile [Studio] 1": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SILENT_RATE_SPEAKER_voce maschile [Studio] 2": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SILENT_RATE_SPEAKER_voce maschile [Studio] 3": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SILENT_RATE_SPEAKER_voce maschile [Studio] 4": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SILENT_RATE_SPEAKER_voce maschile [Telefono] 0": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SOURCE_CHANNEL": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SOURCE_LANGUAGE": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SPEECH_LENGTH_SECTION": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SPEECH_LENGTH_SPEAKER_spk1": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SPEECH_LENGTH_SPEAKER_spk10": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SPEECH_LENGTH_SPEAKER_spk11": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SPEECH_LENGTH_SPEAKER_spk12": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SPEECH_LENGTH_SPEAKER_spk13": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SPEECH_LENGTH_SPEAKER_spk14": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SPEECH_LENGTH_SPEAKER_spk15": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SPEECH_LENGTH_SPEAKER_spk16": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SPEECH_LENGTH_SPEAKER_spk17": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SPEECH_LENGTH_SPEAKER_spk18": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SPEECH_LENGTH_SPEAKER_spk19": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SPEECH_LENGTH_SPEAKER_spk2": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SPEECH_LENGTH_SPEAKER_spk20": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SPEECH_LENGTH_SPEAKER_spk21": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SPEECH_LENGTH_SPEAKER_spk22": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SPEECH_LENGTH_SPEAKER_spk23": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SPEECH_LENGTH_SPEAKER_spk24": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SPEECH_LENGTH_SPEAKER_spk25": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SPEECH_LENGTH_SPEAKER_spk26": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SPEECH_LENGTH_SPEAKER_spk27": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SPEECH_LENGTH_SPEAKER_spk3": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SPEECH_LENGTH_SPEAKER_spk4": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SPEECH_LENGTH_SPEAKER_spk5": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SPEECH_LENGTH_SPEAKER_spk6": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SPEECH_LENGTH_SPEAKER_spk7": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SPEECH_LENGTH_SPEAKER_spk8": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SPEECH_LENGTH_SPEAKER_spk9": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SPEECH_LENGTH_SPEAKER_voce femminile [Studio] 0": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SPEECH_LENGTH_SPEAKER_voce femminile [Studio] 1": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SPEECH_LENGTH_SPEAKER_voce femminile [Studio] 2": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SPEECH_LENGTH_SPEAKER_voce femminile [Studio] 3": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SPEECH_LENGTH_SPEAKER_voce femminile [Studio] 4": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SPEECH_LENGTH_SPEAKER_voce femminile [Telefono] 0": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SPEECH_LENGTH_SPEAKER_voce maschile [Studio] 0": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SPEECH_LENGTH_SPEAKER_voce maschile [Studio] 1": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SPEECH_LENGTH_SPEAKER_voce maschile [Studio] 2": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SPEECH_LENGTH_SPEAKER_voce maschile [Studio] 3": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SPEECH_LENGTH_SPEAKER_voce maschile [Studio] 4": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SPEECH_LENGTH_SPEAKER_voce maschile [Telefono] 0": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SPEECH_RATE_SECTION": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SPEECH_RATE_SPEAKER_spk1": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SPEECH_RATE_SPEAKER_spk10": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SPEECH_RATE_SPEAKER_spk11": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SPEECH_RATE_SPEAKER_spk12": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SPEECH_RATE_SPEAKER_spk13": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SPEECH_RATE_SPEAKER_spk14": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SPEECH_RATE_SPEAKER_spk15": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SPEECH_RATE_SPEAKER_spk16": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SPEECH_RATE_SPEAKER_spk17": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SPEECH_RATE_SPEAKER_spk18": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SPEECH_RATE_SPEAKER_spk19": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SPEECH_RATE_SPEAKER_spk2": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SPEECH_RATE_SPEAKER_spk20": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SPEECH_RATE_SPEAKER_spk21": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SPEECH_RATE_SPEAKER_spk22": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SPEECH_RATE_SPEAKER_spk23": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SPEECH_RATE_SPEAKER_spk24": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SPEECH_RATE_SPEAKER_spk25": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SPEECH_RATE_SPEAKER_spk26": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SPEECH_RATE_SPEAKER_spk27": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SPEECH_RATE_SPEAKER_spk3": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SPEECH_RATE_SPEAKER_spk4": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SPEECH_RATE_SPEAKER_spk5": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SPEECH_RATE_SPEAKER_spk6": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SPEECH_RATE_SPEAKER_spk7": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SPEECH_RATE_SPEAKER_spk8": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SPEECH_RATE_SPEAKER_spk9": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SPEECH_RATE_SPEAKER_voce femminile [Studio] 0": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SPEECH_RATE_SPEAKER_voce femminile [Studio] 1": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SPEECH_RATE_SPEAKER_voce femminile [Studio] 2": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SPEECH_RATE_SPEAKER_voce femminile [Studio] 3": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SPEECH_RATE_SPEAKER_voce femminile [Studio] 4": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SPEECH_RATE_SPEAKER_voce maschile [Studio] 0": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SPEECH_RATE_SPEAKER_voce maschile [Studio] 1": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SPEECH_RATE_SPEAKER_voce maschile [Studio] 2": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SPEECH_RATE_SPEAKER_voce maschile [Studio] 3": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SPEECH_RATE_SPEAKER_voce maschile [Studio] 4": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"SPEECH_RATE_SPEAKER_voce maschile [Telefono] 0": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"TEMPLATE": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"TITLE": {
+						"type": "string"
+					},
+					"TOTAL-TIME": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"TOT_NUMBER_PHRASE": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"TOT_NUMBER_SENTENCE": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"TOT_NUMBER_SPEAKER": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"TOT_NUMBER_TURN": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"TRAPPED": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"TUPLE": {
+						"type": "string",
+						"analyzer": "crmtuple_analyzer"
+					},
+					"WORD-COUNT": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"X-PARSED-BY": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"XMP:CREATORTOOL": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"XMPTPG:NPAGES": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"answer": {
+						"type": "semantic",
+						"store": true,
+						"term_vector": "with_positions_offsets",
+						"fields": {
+							"sem": {
+								"type": "semantic",
+								"term_vector": "with_positions_offsets",
+								"ignore_malformed": true
+							}
+						},
+						"ignore_malformed": true,
+						"ignore_tokens": true
+					},
+					"boosting": {
+						"type": "long"
+					},
+					"checksum": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"conceptualmap": {
+						"type": "string",
+						"index": "no"
+					},
+					"deleteDate": {
+						"type": "date",
+						"format": "strict_date_optional_time||epoch_millis"
+					},
+					"document_raw_storage": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"enable_speaker_separation": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"entity_suggest_Address": {
+						"type": "completion",
+						"analyzer": "suggestion_analyzer",
+						"payloads": false,
+						"preserve_separators": true,
+						"preserve_position_increments": true,
+						"max_input_length": 50
+					},
+					"entity_suggest_BadWord": {
+						"type": "completion",
+						"analyzer": "suggestion_analyzer",
+						"payloads": false,
+						"preserve_separators": true,
+						"preserve_position_increments": true,
+						"max_input_length": 50
+					},
+					"entity_suggest_Colori": {
+						"type": "completion",
+						"analyzer": "suggestion_analyzer",
+						"payloads": false,
+						"preserve_separators": true,
+						"preserve_position_increments": true,
+						"max_input_length": 50
+					},
+					"entity_suggest_Comuni": {
+						"type": "completion",
+						"analyzer": "suggestion_analyzer",
+						"payloads": false,
+						"preserve_separators": true,
+						"preserve_position_increments": true,
+						"max_input_length": 50
+					},
+					"entity_suggest_Date": {
+						"type": "completion",
+						"analyzer": "suggestion_analyzer",
+						"payloads": false,
+						"preserve_separators": true,
+						"preserve_position_increments": true,
+						"max_input_length": 50
+					},
+					"entity_suggest_Email": {
+						"type": "completion",
+						"analyzer": "suggestion_analyzer",
+						"payloads": false,
+						"preserve_separators": true,
+						"preserve_position_increments": true,
+						"max_input_length": 50
+					},
+					"entity_suggest_Lingue": {
+						"type": "completion",
+						"analyzer": "suggestion_analyzer",
+						"payloads": false,
+						"preserve_separators": true,
+						"preserve_position_increments": true,
+						"max_input_length": 50
+					},
+					"entity_suggest_Location": {
+						"type": "completion",
+						"analyzer": "suggestion_analyzer",
+						"payloads": false,
+						"preserve_separators": true,
+						"preserve_position_increments": true,
+						"max_input_length": 50
+					},
+					"entity_suggest_Money": {
+						"type": "completion",
+						"analyzer": "suggestion_analyzer",
+						"payloads": false,
+						"preserve_separators": true,
+						"preserve_position_increments": true,
+						"max_input_length": 50
+					},
+					"entity_suggest_Number": {
+						"type": "completion",
+						"analyzer": "suggestion_analyzer",
+						"payloads": false,
+						"preserve_separators": true,
+						"preserve_position_increments": true,
+						"max_input_length": 50
+					},
+					"entity_suggest_Organization": {
+						"type": "completion",
+						"analyzer": "suggestion_analyzer",
+						"payloads": false,
+						"preserve_separators": true,
+						"preserve_position_increments": true,
+						"max_input_length": 50
+					},
+					"entity_suggest_Percent": {
+						"type": "completion",
+						"analyzer": "suggestion_analyzer",
+						"payloads": false,
+						"preserve_separators": true,
+						"preserve_position_increments": true,
+						"max_input_length": 50
+					},
+					"entity_suggest_Percentage": {
+						"type": "completion",
+						"analyzer": "suggestion_analyzer",
+						"payloads": false,
+						"preserve_separators": true,
+						"preserve_position_increments": true,
+						"max_input_length": 50
+					},
+					"entity_suggest_Person": {
+						"type": "completion",
+						"analyzer": "suggestion_analyzer",
+						"payloads": false,
+						"preserve_separators": true,
+						"preserve_position_increments": true,
+						"max_input_length": 50
+					},
+					"entity_suggest_Province": {
+						"type": "completion",
+						"analyzer": "suggestion_analyzer",
+						"payloads": false,
+						"preserve_separators": true,
+						"preserve_position_increments": true,
+						"max_input_length": 50
+					},
+					"entity_suggest_Regioni": {
+						"type": "completion",
+						"analyzer": "suggestion_analyzer",
+						"payloads": false,
+						"preserve_separators": true,
+						"preserve_position_increments": true,
+						"max_input_length": 50
+					},
+					"entitymap": {
+						"type": "string",
+						"index": "no"
+					},
+					"formattedtext": {
+						"type": "binary",
+						"store": true
+					},
+					"insertDate": {
+						"type": "date",
+						"format": "strict_date_optional_time||epoch_millis"
+					},
+					"language": {
+						"type": "string",
+						"index": "not_analyzed",
+						"store": true
+					},
+					"mimetype": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"named_entity_Address": {
+						"type": "string",
+						"boost": 2.0,
+						"analyzer": "chain_analyzer"
+					},
+					"named_entity_BadWord": {
+						"type": "string",
+						"boost": 2.0,
+						"analyzer": "chain_analyzer"
+					},
+					"named_entity_Colori": {
+						"type": "string",
+						"boost": 2.0,
+						"analyzer": "chain_analyzer"
+					},
+					"named_entity_Comuni": {
+						"type": "string",
+						"boost": 2.0,
+						"analyzer": "chain_analyzer"
+					},
+					"named_entity_Date": {
+						"type": "string",
+						"boost": 2.0,
+						"analyzer": "chain_analyzer"
+					},
+					"named_entity_Email": {
+						"type": "string",
+						"boost": 2.0,
+						"analyzer": "chain_analyzer"
+					},
+					"named_entity_Lingue": {
+						"type": "string",
+						"boost": 2.0,
+						"analyzer": "chain_analyzer"
+					},
+					"named_entity_Location": {
+						"type": "string",
+						"boost": 2.0,
+						"analyzer": "chain_analyzer"
+					},
+					"named_entity_Money": {
+						"type": "string",
+						"boost": 2.0,
+						"analyzer": "chain_analyzer"
+					},
+					"named_entity_Number": {
+						"type": "string",
+						"boost": 2.0,
+						"analyzer": "chain_analyzer"
+					},
+					"named_entity_Organization": {
+						"type": "string",
+						"boost": 2.0,
+						"analyzer": "chain_analyzer"
+					},
+					"named_entity_Percent": {
+						"type": "string",
+						"boost": 2.0,
+						"analyzer": "chain_analyzer"
+					},
+					"named_entity_Percentage": {
+						"type": "string",
+						"boost": 2.0,
+						"analyzer": "chain_analyzer"
+					},
+					"named_entity_Person": {
+						"type": "string",
+						"boost": 2.0,
+						"analyzer": "chain_analyzer"
+					},
+					"named_entity_Province": {
+						"type": "string",
+						"boost": 2.0,
+						"analyzer": "chain_analyzer"
+					},
+					"named_entity_Regioni": {
+						"type": "string",
+						"boost": 2.0,
+						"analyzer": "chain_analyzer"
+					},
+					"parentURI": {
+						"type": "string",
+						"analyzer": "chain_analyzer"
+					},
+					"plaintext": {
+						"type": "semantic",
+						"store": true,
+						"term_vector": "with_positions_offsets",
+						"fields": {
+							"sem": {
+								"type": "semantic",
+								"term_vector": "with_positions_offsets",
+								"ignore_malformed": true
+							}
+						},
+						"ignore_malformed": true,
+						"ignore_tokens": true
+					},
+					"propertyUriExactTriple": {
+						"type": "string",
+						"boost": 2.0,
+						"analyzer": "chain_analyzer"
+					},
+					"propertyUrisPermutation": {
+						"type": "string",
+						"analyzer": "chain_analyzer"
+					},
+					"query_suggestion": {
+						"type": "completion",
+						"analyzer": "simple",
+						"payloads": false,
+						"preserve_separators": true,
+						"preserve_position_increments": true,
+						"max_input_length": 50,
+						"context": {
+							"ontology": {
+								"type": "category",
+								"path": "_type",
+								"default": []
+							}
+						}
+					},
+					"resourceURI": {
+						"type": "string",
+						"boost": 2.0,
+						"analyzer": "chain_analyzer"
+					},
+					"resourceURI_answer": {
+						"type": "string",
+						"analyzer": "chain_analyzer"
+					},
+					"size": {
+						"type": "long"
+					},
+					"sponsoring": {
+						"type": "long"
+					},
+					"tuple_answer": {
+						"type": "string",
+						"analyzer": "crmtuple_analyzer"
+					},
+					"tuple_certified": {
+						"type": "string",
+						"analyzer": "crmtuple_analyzer"
+					},
+					"updateDate": {
+						"type": "date",
+						"format": "strict_date_optional_time||epoch_millis"
+					},
+					"uri": {
+						"type": "string",
+						"index": "not_analyzed"
+					}
+				}
+			},
+			".percolator": {
+				"properties": {
+					"query": {
+						"enabled": false,
+						"properties": {
+							"query_string": {
+								"properties": {
+									"query": {
+										"type": "string"
+									}
+								}
+							}
+						}
+					},
+					"textToPercolate": {
+						"type": "string"
+					}
+				}
+			},
+			"google": {
+				"_all": {
+					"enabled": false
+				},
+				"_source": {
+					"excludes": ["formattedtext"]
+				},
+				"dynamic_templates": [{
+					"suggestion": {
+						"mapping": {
+							"analyzer": "suggestion_analyzer",
+							"type": "completion"
+						},
+						"match": "*_suggest_*"
+					}
+				}, {
+					"entity_field": {
+						"mapping": {
+							"index": "analyzed",
+							"analyzer": "chain_analyzer",
+							"boost": 2.0,
+							"type": "string"
+						},
+						"match": "named_entity_*"
+					}
+				}, {
+					"string_not_analyzed": {
+						"mapping": {
+							"index": "not_analyzed",
+							"type": "string"
+						},
+						"match": "*",
+						"match_mapping_type": "string"
+					}
+				}, {
+					"date_not_analyzed": {
+						"mapping": {
+							"index": "not_analyzed",
+							"type": "string"
+						},
+						"match": "*",
+						"match_mapping_type": "date"
+					}
+				}],
+				"properties": {
+					"CHANNEL_ID": {
+						"type": "long"
+					},
+					"CHANNEL_NAME": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"CHANNEL_TYPE": {
+						"type": "string",
+						"index": "no"
+					},
+					"CONFIDENTIAL_GROUP_NAME": {
+						"type": "string",
+						"analyzer": "whitespace"
+					},
+					"CONFIDENTIAL_LEVEL_NUM": {
+						"type": "integer"
+					},
+					"DialogAct": {
+						"type": "string",
+						"analyzer": "whitespace"
+					},
+					"EXTERNAL_DOCUMENT_ID": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"ONTOLOGY_FILENAME": {
+						"type": "string",
+						"analyzer": "whitespace"
+					},
+					"TITLE": {
+						"type": "string"
+					},
+					"TUPLE": {
+						"type": "string",
+						"analyzer": "crmtuple_analyzer"
+					},
+					"answer": {
+						"type": "semantic",
+						"store": true,
+						"term_vector": "with_positions_offsets",
+						"fields": {
+							"sem": {
+								"type": "semantic",
+								"term_vector": "with_positions_offsets",
+								"ignore_malformed": true
+							}
+						},
+						"ignore_malformed": true,
+						"ignore_tokens": true
+					},
+					"checksum": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"conceptualmap": {
+						"type": "string",
+						"index": "no"
+					},
+					"deleteDate": {
+						"type": "date",
+						"format": "strict_date_optional_time||epoch_millis"
+					},
+					"entitymap": {
+						"type": "string",
+						"index": "no"
+					},
+					"formattedtext": {
+						"type": "binary",
+						"store": true
+					},
+					"insertDate": {
+						"type": "date",
+						"format": "strict_date_optional_time||epoch_millis"
+					},
+					"language": {
+						"type": "string",
+						"index": "not_analyzed",
+						"store": true
+					},
+					"mimetype": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"parentURI": {
+						"type": "string",
+						"analyzer": "chain_analyzer"
+					},
+					"plaintext": {
+						"type": "semantic",
+						"store": true,
+						"term_vector": "with_positions_offsets",
+						"fields": {
+							"sem": {
+								"type": "semantic",
+								"term_vector": "with_positions_offsets",
+								"ignore_malformed": true
+							}
+						},
+						"ignore_malformed": true,
+						"ignore_tokens": true
+					},
+					"propertyUriExactTriple": {
+						"type": "string",
+						"boost": 2.0,
+						"analyzer": "chain_analyzer"
+					},
+					"propertyUrisPermutation": {
+						"type": "string",
+						"analyzer": "chain_analyzer"
+					},
+					"query_suggestion": {
+						"type": "completion",
+						"analyzer": "simple",
+						"payloads": false,
+						"preserve_separators": true,
+						"preserve_position_increments": true,
+						"max_input_length": 50,
+						"context": {
+							"ontology": {
+								"type": "category",
+								"path": "_type",
+								"default": []
+							}
+						}
+					},
+					"resourceURI": {
+						"type": "string",
+						"boost": 2.0,
+						"analyzer": "chain_analyzer"
+					},
+					"resourceURI_answer": {
+						"type": "string",
+						"analyzer": "chain_analyzer"
+					},
+					"size": {
+						"type": "long"
+					},
+					"tuple_answer": {
+						"type": "string",
+						"analyzer": "crmtuple_analyzer"
+					},
+					"tuple_certified": {
+						"type": "string",
+						"analyzer": "crmtuple_analyzer"
+					},
+					"updateDate": {
+						"type": "date",
+						"format": "strict_date_optional_time||epoch_millis"
+					},
+					"uri": {
+						"type": "string",
+						"index": "not_analyzed"
+					}
+				}
+			},
+			"yahoonews": {
+				"_all": {
+					"enabled": false
+				},
+				"_source": {
+					"excludes": ["formattedtext"]
+				},
+				"dynamic_templates": [{
+					"suggestion": {
+						"mapping": {
+							"analyzer": "suggestion_analyzer",
+							"type": "completion"
+						},
+						"match": "*_suggest_*"
+					}
+				}, {
+					"entity_field": {
+						"mapping": {
+							"index": "analyzed",
+							"analyzer": "chain_analyzer",
+							"boost": 2.0,
+							"type": "string"
+						},
+						"match": "named_entity_*"
+					}
+				}, {
+					"string_not_analyzed": {
+						"mapping": {
+							"index": "not_analyzed",
+							"type": "string"
+						},
+						"match": "*",
+						"match_mapping_type": "string"
+					}
+				}, {
+					"date_not_analyzed": {
+						"mapping": {
+							"index": "not_analyzed",
+							"type": "string"
+						},
+						"match": "*",
+						"match_mapping_type": "date"
+					}
+				}],
+				"properties": {
+					"CHANNEL_ID": {
+						"type": "long"
+					},
+					"CHANNEL_NAME": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"CHANNEL_TYPE": {
+						"type": "string",
+						"index": "no"
+					},
+					"CONFIDENTIAL_GROUP_NAME": {
+						"type": "string",
+						"analyzer": "whitespace"
+					},
+					"CONFIDENTIAL_LEVEL_NUM": {
+						"type": "integer"
+					},
+					"DialogAct": {
+						"type": "string",
+						"analyzer": "whitespace"
+					},
+					"EXTERNAL_DOCUMENT_ID": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"ONTOLOGY_FILENAME": {
+						"type": "string",
+						"analyzer": "whitespace"
+					},
+					"TITLE": {
+						"type": "string"
+					},
+					"TUPLE": {
+						"type": "string",
+						"analyzer": "crmtuple_analyzer"
+					},
+					"answer": {
+						"type": "semantic",
+						"store": true,
+						"term_vector": "with_positions_offsets",
+						"fields": {
+							"sem": {
+								"type": "semantic",
+								"term_vector": "with_positions_offsets",
+								"ignore_malformed": true
+							}
+						},
+						"ignore_malformed": true,
+						"ignore_tokens": true
+					},
+					"checksum": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"conceptualmap": {
+						"type": "string",
+						"index": "no"
+					},
+					"deleteDate": {
+						"type": "date",
+						"format": "strict_date_optional_time||epoch_millis"
+					},
+					"entitymap": {
+						"type": "string",
+						"index": "no"
+					},
+					"formattedtext": {
+						"type": "binary",
+						"store": true
+					},
+					"insertDate": {
+						"type": "date",
+						"format": "strict_date_optional_time||epoch_millis"
+					},
+					"language": {
+						"type": "string",
+						"index": "not_analyzed",
+						"store": true
+					},
+					"mimetype": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"parentURI": {
+						"type": "string",
+						"analyzer": "chain_analyzer"
+					},
+					"plaintext": {
+						"type": "semantic",
+						"store": true,
+						"term_vector": "with_positions_offsets",
+						"fields": {
+							"sem": {
+								"type": "semantic",
+								"term_vector": "with_positions_offsets",
+								"ignore_malformed": true
+							}
+						},
+						"ignore_malformed": true,
+						"ignore_tokens": true
+					},
+					"propertyUriExactTriple": {
+						"type": "string",
+						"boost": 2.0,
+						"analyzer": "chain_analyzer"
+					},
+					"propertyUrisPermutation": {
+						"type": "string",
+						"analyzer": "chain_analyzer"
+					},
+					"query_suggestion": {
+						"type": "completion",
+						"analyzer": "simple",
+						"payloads": false,
+						"preserve_separators": true,
+						"preserve_position_increments": true,
+						"max_input_length": 50,
+						"context": {
+							"ontology": {
+								"type": "category",
+								"path": "_type",
+								"default": []
+							}
+						}
+					},
+					"resourceURI": {
+						"type": "string",
+						"boost": 2.0,
+						"analyzer": "chain_analyzer"
+					},
+					"resourceURI_answer": {
+						"type": "string",
+						"analyzer": "chain_analyzer"
+					},
+					"size": {
+						"type": "long"
+					},
+					"tuple_answer": {
+						"type": "string",
+						"analyzer": "crmtuple_analyzer"
+					},
+					"tuple_certified": {
+						"type": "string",
+						"analyzer": "crmtuple_analyzer"
+					},
+					"updateDate": {
+						"type": "date",
+						"format": "strict_date_optional_time||epoch_millis"
+					},
+					"uri": {
+						"type": "string",
+						"index": "not_analyzed"
+					}
+				}
+			}
+		}
+	}
+}
