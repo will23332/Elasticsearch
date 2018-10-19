@@ -279,7 +279,7 @@ Regione Veneto:
 ```
 @[2-4](Settaggi del Cluster)
 @[5-11](Dichiarazione Analyzer Custom)
-@[1-17](Settaggi Analyzer)
+@[14-17](Settaggi Analyzer)
 @[21-29](Definizione del filtro custom dei sinonimi)
 @[24](Path dove risiede il file dei sinonimi)
 @[35-38](Mapping campo comuni)
