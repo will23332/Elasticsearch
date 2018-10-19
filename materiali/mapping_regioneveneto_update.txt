@@ -1,0 +1,56 @@
+ "settings": {
+  "number_of_shards": 3,
+  "number_of_replicas": 2,
+  "analysis": {
+   "analyzer": {
+    "simple_rebuilt_comuni": {
+     "tokenizer": "lowercase",
+     "filter": [
+      "lowercase",
+      "asciifolding",
+      "synonym_comuni"
+     ]
+    },
+	"simple_rebuilt_province": {
+     "tokenizer": "lowercase",
+     "filter": [
+      "synonym_province"
+     ]
+    }
+   },
+   "filter": {
+    "synonym_comuni": {
+     "type": "synonym",
+     "synonyms_path": "analysis/synonym_comuni.txt"
+    },
+	"synonym_province": {
+     "type": "synonym",
+     "synonyms_path": "analysis/synonym_province.txt"
+    }
+   }
+  }
+ },
+ "mappings": {
+  "luogo": {
+   "properties": {
+    "nome_comune": {
+     "type": "text",
+     "analyzer": "simple_rebuilt_comuni"
+    },
+    "nome_provincia": {
+     "type": "text",
+     "analyzer": "simple_rebuilt_province"
+    },
+    "sigla_provincia": {
+     "type": "text"
+   },
+    "nome_regione": {
+     "type": "text"
+    },
+    "citta_metropolitana": {
+     "type": "text"
+    }
+   }
+  }
+ }
+}
