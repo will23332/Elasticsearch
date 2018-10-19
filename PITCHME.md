@@ -306,7 +306,8 @@ Documenti contenuti:
 	"codice_citta_metropolitana": 201
 }
 ```
-
+@[1-6](Prefisso Bulk Import)
+@[7-16](Documento)
 ---
 ## Index Mapping
 Elastic si fonda sul concetto di indice inverso:
