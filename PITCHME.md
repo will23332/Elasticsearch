@@ -288,12 +288,23 @@ Regione Veneto:
 +++
 Documenti contenuti:
 ```
-{"index":{"_index":"luoghi-istat", "_type":"luogo"}}
-{"nome_comune" : "Agliè","nome_provincia" : "","sigla_provincia" : "TO","nome_regione" : "Piemonte","citta_metropolitana" : "Torino","codice_comune" : 1001,"codice_provincia" : 1,"codice_regione" : 1,"codice_citta_metropolitana" : 201}
-{"index":{"_index":"luoghi-istat", "_type":"luogo"}}
-{"nome_comune" : "Airasca","nome_provincia" : "","sigla_provincia" : "TO","nome_regione" : "Piemonte","citta_metropolitana" : "Torino","codice_comune" : 1002,"codice_provincia" : 1,"codice_regione" : 1,"codice_citta_metropolitana" : 201}
-{"index":{"_index":"luoghi-istat", "_type":"luogo"}}
-{"nome_comune" : "Ala di Stura","nome_provincia" : "","sigla_provincia" : "TO","nome_regione" : "Piemonte","citta_metropolitana" : "Torino","codice_comune" : 1003,"codice_provincia" : 1,"codice_regione" : 1,"codice_citta_metropolitana" : 201}
+{
+	"index": {
+		"_index": "luoghi-istat",
+		"_type": "luogo"
+	}
+} 
+{
+	"nome_comune": "Ala di Stura",
+	"nome_provincia": "",
+	"sigla_provincia": "TO",
+	"nome_regione": "Piemonte",
+	"citta_metropolitana": "Torino",
+	"codice_comune": 1003,
+	"codice_provincia": 1,
+	"codice_regione": 1,
+	"codice_citta_metropolitana": 201
+}
 ```
 
 ---
