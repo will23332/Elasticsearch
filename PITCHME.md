@@ -220,50 +220,80 @@ Documentazione [Query DSL](https://www.elastic.co/guide/en/elasticsearch/referen
 Regione Veneto:
 
 ```
-{
-  "settings": {
-    "number_of_shards": 3,
-    "number_of_replicas": 2,
-    "analysis": {
-      "analyzer": {
-        "simple_rebuilt": {
-          "tokenizer": "lowercase",
-          "filter": [
-		  "lowercase",
-            "asciifolding",
-            "synonym"
-          ]
-        }
-      }
+ "settings": {
+  "number_of_shards": 3,
+  "number_of_replicas": 2,
+  "analysis": {
+   "analyzer": {
+    "simple_rebuilt_comuni": {
+     "tokenizer": "lowercase",
+     "filter": [
+      "lowercase",
+      "asciifolding",
+      "synonym_comuni"
+     ]
+    },
+	"simple_rebuilt_province": {
+     "tokenizer": "lowercase",
+     "filter": [
+      "synonym_province"
+     ]
+    }
+   },
+   "filter": {
+    "synonym_comuni": {
+     "type": "synonym",
+     "synonyms_path": "analysis/synonym_comuni.txt"
+    },
+	"synonym_province": {
+     "type": "synonym",
+     "synonyms_path": "analysis/synonym_province.txt"
+    }
+   }
+  }
+ },
+ "mappings": {
+  "luogo": {
+   "properties": {
+    "nome_comune": {
+     "type": "text",
+     "analyzer": "simple_rebuilt_comuni"
+    },
+    "nome_provincia": {
+     "type": "text",
+     "analyzer": "simple_rebuilt_province"
+    },
+    "sigla_provincia": {
+     "type": "text"
+   },
+    "nome_regione": {
+     "type": "text"
+    },
+    "citta_metropolitana": {
+     "type": "text"
+    }
+   }
+  }
+ }
+}
 ```
 @[2-4](Settaggi del Cluster)
-@[5-7](Dichiarazione Analyzer Custom)
-@[7-12](Settaggi Analyzer)
-
-+++
-
-```
-      "filter": {
-        "synonym": {
-          "type": "synonym",
-          "synonyms_path": "analysis/synonym.txt"
-        }
-      }
-```
-@[1-3](Definizione del filtro custom dei sinonimi)
-@[4](Path dove risiede il file dei sinonimi)
+@[5-11](Dichiarazione Analyzer Custom)
+@[1-17](Settaggi Analyzer)
+@[21-29](Definizione del filtro custom dei sinonimi)
+@[24](Path dove risiede il file dei sinonimi)
+@[35-38](Mapping campo comuni)
+@[40-42](Mapping campo province)
 
 +++
 Documenti contenuti:
 ```
-{"index":{}}
-{"nome" : "Cazzano di Tramigna"}
-{"index":{}}
-{"nome" : "Bussolengo"}
-{"index":{}}
-{"nome" : "Ronco all'Adige"}
-{"index":{}}
-{"nome" : "Roncà"}
+{"index":{"_index":"luoghi-istat", "_type":"luogo"}}
+{"nome_comune" : "Agliè","nome_provincia" : "","sigla_provincia" : "TO","nome_regione" : "Piemonte","citta_metropolitana" : "Torino","codice_comune" : 1001,"codice_provincia" : 1,"codice_regione" : 1,"codice_citta_metropolitana" : 201}
+{"index":{"_index":"luoghi-istat", "_type":"luogo"}}
+{"nome_comune" : "Airasca","nome_provincia" : "","sigla_provincia" : "TO","nome_regione" : "Piemonte","citta_metropolitana" : "Torino","codice_comune" : 1002,"codice_provincia" : 1,"codice_regione" : 1,"codice_citta_metropolitana" : 201}
+{"index":{"_index":"luoghi-istat", "_type":"luogo"}}
+{"nome_comune" : "Ala di Stura","nome_provincia" : "","sigla_provincia" : "TO","nome_regione" : "Piemonte","citta_metropolitana" : "Torino","codice_comune" : 1003,"codice_provincia" : 1,"codice_regione" : 1,"codice_citta_metropolitana" : 201}
 ```
 
 ---
