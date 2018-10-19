@@ -984,7 +984,9 @@ Il mapping di un unico indice dei documenti sul KM di CRAIM vede @color[#DC143C]
 				}
 			}
 ```
-
+@[8-15](Analyzer di suggerimento)
+@[17-25](Analyzer con boosting delle entità)
+@[446-453](Campo mappato per il suggerimento delle entità)
 +++
 
 ```
@@ -1028,6 +1030,8 @@ Il mapping di un unico indice dei documenti sul KM di CRAIM vede @color[#DC143C]
 	"CONFIDENTIAL_LEVEL_LABEL": "UNCLASSIFIED"
 }		
 ```
+@[15](Campo analizzato con boosting delle entità)
+@[22](Campo mappato per il suggerimento delle entità)
 
 ---
 
